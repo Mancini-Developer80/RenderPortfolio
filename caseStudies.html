@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Giuseppe Mancini | Full Stack Web Developer</title>
+  </head>
+  <body>
+    <header class="header" id="home">
+      <nav class="navbar">
+        <div class="container flex-container">
+          <div class="logo">
+            <a href="#home" aria-label="Homepage">
+              <img src="./img/SVGdev/SVG/Risorsa 2.svg" alt="Logo" />
+            </a>
+          </div>
+          <div class="main-list-items">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#portfolio">Projects</a></li>
+              <li><a href="about.html">About Me</a></li>
+            </ul>
+          </div>
+          <div class="mobile-list-items">
+            <button
+              class="mobile-menu-toggle"
+              aria-label="Open navigation menu"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+              type="button"
+            >
+              <i class="fas fa-bars fa-2x"></i>
+            </button>
+            <ul class="mobile-menu" id="mobile-menu" aria-hidden="true">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#portfolio">Projects</a></li>
+              <li><a href="about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section class="case-studies flex-container">
+      <div class="container">
+        <h1 class="case-studies-title">Case Studies</h1>
+        <div class="case-studies-grid">
+          <div class="case-study-card">
+            <img
+              src="./img/MyFlixCaseStudy.png"
+              alt="My Flix App Screenshot"
+              class="case-study-image"
+            />
+            <h2>Case Study My Flix App</h2>
+            <p>
+              Developed a full-stack e-commerce website using React, Node.js,
+              and MongoDB. Implemented features like user authentication,
+              product management, and payment processing.
+            </p>
+            <a href="/cases/MyFlixCaseStudyComp.pdf">Download</a>
+          </div>
+          <div class="case-study-card">
+            <h2>Project 2: Portfolio Platform</h2>
+            <p>
+              Built a responsive portfolio platform for creatives using Vue.js
+              and Firebase. Included dynamic content management and real-time
+              updates.
+            </p>
+            <a href="#">Read More</a>
+          </div>
+          <div class="case-study-card">
+            <h2>Project 3: Task Management App</h2>
+            <p>
+              Designed and developed a collaborative task management app with
+              drag-and-drop features, notifications, and team collaboration
+              tools.
+            </p>
+            <a href="#">Read More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-left">
+          <p>
+            © 2025 Giuseppe Mancini | Full Stack Web Developer | All rights
+            reserved.
+          </p>
+          <a href="https://twitter.com/" target="_blank" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
