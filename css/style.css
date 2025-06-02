@@ -746,7 +746,8 @@ a[href="index.html#portfolio"]:focus {
   color: #222c3c;
   text-shadow: 0 4px 16px #60efff;
 }
-
+a[aria-label="LinkedIn"],
+a[aria-label="GitHub"],
 a[aria-label="Twitter"] {
   display: inline-flex;
   align-items: center;
@@ -761,7 +762,10 @@ a[aria-label="Twitter"] {
   color: #fff;
   font-size: 1.5rem;
 }
-
+a[aria-label="GitHub"]:hover,
+a[aria-label="GitHub]"]:focus,
+a[aria-label="LinkedIn"]:hover,
+a[aria-label="LinkedIn"]:focus,
 a[aria-label="Twitter"]:hover,
 a[aria-label="Twitter"]:focus {
   background: linear-gradient(135deg, #1da1f2 0%, #60efff 100%);
@@ -769,7 +773,8 @@ a[aria-label="Twitter"]:focus {
   box-shadow: 0 6px 24px rgba(96, 239, 255, 0.18);
   color: #fff;
 }
-
+a[aria-label="GitHub"] i,
+a[aria-label="LinkedIn"] i,
 a[aria-label="Twitter"] i {
   color: #fff;
   font-size: 1.5rem;
@@ -1005,6 +1010,177 @@ a[aria-label="Twitter"] i {
   box-shadow: 0 6px 18px rgba(96, 239, 255, 0.13);
 }
 
+/* --- ABOUT PAGE: SCOPED STYLES --- */
+.about-page .about-section {
+  background-image: url(../img/laptopDesk.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 7.5rem 1.5rem 4.5rem 1.5rem; /* Top for navbar, bottom for footer */
+  box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.35);
+  z-index: 3;
+}
+
+.about-page .about-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 28, 44, 0.82); /* Strong overlay for contrast */
+  z-index: 1;
+  pointer-events: none;
+}
+
+.about-page .about-section-container {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.97); /* Light card for text contrast */
+  border-radius: 1.2rem;
+  box-shadow: 0 8px 32px rgba(57, 125, 226, 0.13);
+  padding: 2.5rem 2rem 2rem 2rem;
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto 2.5rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-page .about-section-title {
+  color: #397de2;
+  font-size: 2.1rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.about-page .about-section-container p {
+  color: #1a2233;
+  margin-bottom: 1.2rem;
+  font-size: 1.15rem;
+  line-height: 1.85;
+  background: none;
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.1rem;
+  box-shadow: none;
+}
+
+.about-page .about-section-container p:last-child {
+  margin-bottom: 0;
+}
+
+.about-page .about-section-resume {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.about-page .about-section-btn {
+  font-size: 1.1rem;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(90deg, #397de2 0%, #60efff 100%);
+  color: #fff;
+  border: none;
+  border-radius: 0.7em;
+  font-weight: 600;
+  box-shadow: 0 2px 12px rgba(57, 125, 226, 0.08);
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.about-page .about-section-btn:hover,
+.about-page .about-section-btn:focus {
+  background: linear-gradient(90deg, #60efff 0%, #397de2 100%);
+  color: #222c3c;
+}
+
+@media (max-width: 992px) {
+  .about-page .about-section {
+    padding: 6.5rem 0.5rem 3rem 0.5rem;
+    min-height: unset;
+  }
+  .about-page .about-section-container {
+    padding: 1.5rem 0.7rem;
+    max-width: 98vw;
+  }
+  .about-page .about-section-title {
+    font-size: 1.5rem;
+  }
+  .about-page .about-section-container p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Improve centering and spacing for first-about and second-about sections */
+  .first-about,
+  .second-about {
+    padding: 3rem 0.5rem;
+    box-sizing: border-box;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+  }
+  .left-content,
+  .right-content {
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 0.5rem;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  .profile-img-wrapper,
+  .right-content img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-page .about-section {
+    padding: 5.5rem 0.2rem 2.5rem 0.2rem;
+  }
+  .about-page .about-section-container {
+    padding: 1rem 0.3rem;
+    border-radius: 0.7rem;
+  }
+  .about-page .about-section-title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .about-page .about-section-container p {
+    font-size: 0.97rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .first-about,
+  .second-about {
+    padding: 2rem 0.2rem;
+  }
+  .about-grid {
+    gap: 1rem;
+  }
+  .left-content,
+  .right-content {
+    padding: 1rem 0.2rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   .contact .container {
@@ -1013,6 +1189,19 @@ a[aria-label="Twitter"] i {
   }
   .contact h3 {
     font-size: 1.4rem;
+  }
+
+  .about {
+    padding-top: 80px;
+  }
+  .about h3 {
+    font-size: 1.2rem;
+  }
+  .about p {
+    font-size: 0.97rem;
+  }
+  .about-container {
+    padding: 0.7rem 0.3rem;
   }
 }
 
@@ -1233,5 +1422,319 @@ a[aria-label="Twitter"] i {
   }
   .about-container {
     padding: 0.7rem 0.3rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .portfolio {
+    padding: 3rem 0.5rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    width: 100%;
+    max-width: 98vw;
+    margin: 0 auto;
+    justify-items: center;
+    align-items: center;
+  }
+  .project {
+    margin: 0 auto;
+    width: 95vw;
+    max-width: 400px;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio {
+    padding: 2rem 0.2rem;
+  }
+  .projects-grid {
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+  .project {
+    width: 99vw;
+    max-width: 99vw;
+    padding: 0.5rem 0.1rem;
+    margin: 0 auto;
+  }
+}
+
+/* Scoped styles for case-studies-page desktop version */
+
+.case-studies-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f7fafd;
+}
+
+.case-studies-page .case-studies-section {
+  flex: 1 0 auto;
+  padding: 8rem 0 5rem 0; /* Top for navbar, bottom for footer */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("../img/workPlace.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+.case-studies-page .case-studies-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 28, 44, 0.78); /* Overlay for contrast */
+  z-index: 1;
+  pointer-events: none;
+}
+
+.case-studies-page .case-studies-section-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.case-studies-page .case-studies-section-title {
+  font-size: 2.6rem;
+  color: #397de2;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  letter-spacing: 1px;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(96, 239, 255, 0.08);
+}
+
+.case-studies-page .case-studies-section-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  width: 100%;
+  justify-items: center;
+  align-items: stretch;
+}
+
+.case-studies-page .case-studies-section-card {
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px rgba(57, 125, 226, 0.13);
+  padding: 2.2rem 1.7rem 2rem 1.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.25s, box-shadow 0.25s;
+  border: 1.5px solid #60efff22;
+  position: relative;
+  min-height: 340px;
+  max-width: 370px;
+  width: 100%;
+}
+
+.case-studies-page .case-studies-section-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 36px rgba(57, 125, 226, 0.18), 0 2px 0 #60efff;
+  border-color: #60efff;
+}
+
+.case-studies-page .case-studies-section-image {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 0.8rem;
+  margin-bottom: 1.2rem;
+  object-fit: cover;
+  box-shadow: 0 2px 12px rgba(57, 125, 226, 0.08);
+}
+
+.case-studies-page .case-studies-section-card h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #397de2;
+  margin-bottom: 1rem;
+  margin-top: 0;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px rgba(96, 239, 255, 0.08);
+}
+
+.case-studies-page .case-studies-section-card p {
+  color: #1a2233;
+  font-size: 1.08rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.7;
+}
+
+.case-studies-page .case-studies-section-card a {
+  margin-top: auto;
+  align-self: flex-end;
+  background: linear-gradient(90deg, #397de2 0%, #60efff 100%);
+  color: #fff;
+  border: none;
+  border-radius: 0.7em;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 2px 12px rgba(57, 125, 226, 0.08);
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0.7rem 1.5rem;
+  display: inline-block;
+}
+
+.case-studies-page .case-studies-section-card a:hover,
+.case-studies-page .case-studies-section-card a:focus {
+  background: linear-gradient(90deg, #60efff 0%, #397de2 100%);
+  color: #222c3c;
+}
+
+/* --- MEDIA QUERIES --- */
+@media (max-width: 1200px) {
+  .case-studies-page .case-studies-section-container {
+    max-width: 1100px;
+  }
+  .case-studies-page .case-studies-section-grid {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 992px) {
+  .case-studies-page .case-studies-section {
+    padding: 7rem 0.5rem 6rem 0.5rem;
+  }
+  .case-studies-page .case-studies-section-container {
+    max-width: 98vw;
+    padding: 0;
+  }
+  .case-studies-page .case-studies-section-title {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+  }
+  .case-studies-page .case-studies-section-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    max-width: 98vw;
+  }
+  .case-studies-page .case-studies-section-card {
+    margin: 0 auto;
+    width: 95vw;
+    max-width: 420px;
+    padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+    min-height: 220px;
+  }
+  .case-studies-page .case-studies-section-card h2 {
+    font-size: 1.1rem;
+  }
+  .case-studies-page .case-studies-section-card p {
+    font-size: 0.98rem;
+    margin-bottom: 1rem;
+  }
+  .case-studies-page .case-studies-section-card a {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .case-studies-page .case-studies-section {
+    padding: 6rem 0.2rem 5rem 0.2rem;
+  }
+  .case-studies-page .case-studies-section-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.7rem;
+  }
+  .case-studies-page .case-studies-section-grid {
+    gap: 1rem;
+    padding: 0.5rem 0;
+    max-width: 99vw;
+  }
+  .case-studies-page .case-studies-section-card {
+    width: 99vw;
+    max-width: 99vw;
+    padding: 0.7rem 0.3rem 0.7rem 0.3rem;
+    min-height: 160px;
+  }
+  .case-studies-page .case-studies-section-card h2 {
+    font-size: 1rem;
+  }
+  .case-studies-page .case-studies-section-card p {
+    font-size: 0.95rem;
+    margin-bottom: 0.7rem;
+  }
+  .case-studies-page .case-studies-section-card a {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.8rem;
+  }
+}
+
+.skills-heading {
+  font-size: 2.2rem;
+
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(96, 239, 255, 0.08);
+}
+
+.skills-description {
+  color: #1a2233;
+  font-size: 1.18rem;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto 2.5rem auto;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 0.8rem;
+  box-shadow: 0 4px 24px rgba(57, 125, 226, 0.07);
+  padding: 1.5rem 1.2rem;
+}
+
+@media (max-width: 600px) {
+  .skills-heading {
+    font-size: 1.4rem;
+    margin-bottom: 0.7rem;
+  }
+  .skills-description {
+    font-size: 1rem;
+    padding: 1rem 0.5rem;
+    border-radius: 0.5rem;
+  }
+}
+
+@media (max-width: 1028px) and (min-width: 601px) {
+  .skills-icons {
+    padding: 2.5rem 0.5rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .skills-icons-wrapper-1,
+  .skills-icons-wrapper-2 {
+    padding: 1.5rem 0;
   }
 }
