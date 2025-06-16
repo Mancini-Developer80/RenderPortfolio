@@ -430,6 +430,19 @@ img {
   box-shadow: var(--box-shadow);
 }
 
+.contact .thankyou-content {
+  color: #1a2233;
+  text-align: center;
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+.contact .thankyou-content .lead-thankyou {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
 /* .first-about .frame-left {
   animation: imgReveal both;
   animation-timeline: view();
