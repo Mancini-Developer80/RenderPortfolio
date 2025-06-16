@@ -185,4 +185,46 @@ document.addEventListener("DOMContentLoaded", function () {
     if (secondRight) observer2.observe(secondRight);
     if (btnInfo) observer2.observe(btnInfo);
   }
+
+  // IntersectionObserver for each project card animation (bidirectional)
+  const projectCards = document.querySelectorAll('.projects .project');
+  if (projectCards.length) {
+    const projectObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          } else {
+            entry.target.classList.remove('visible');
+          }
+        });
+      },
+      {
+        threshold: 0.25 // Animate when 25% visible
+      }
+    );
+    projectCards.forEach(card => projectObserver.observe(card));
+  }
+
+  // IntersectionObserver for skills heading and description (bidirectional)
+  const skillsHeading = document.querySelector('.skills-heading');
+  const skillsDescription = document.querySelector('.skills-description');
+  if (skillsHeading || skillsDescription) {
+    const skillsObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          } else {
+            entry.target.classList.remove('visible');
+          }
+        });
+      },
+      {
+        threshold: 0.3
+      }
+    );
+    if (skillsHeading) skillsObserver.observe(skillsHeading);
+    if (skillsDescription) skillsObserver.observe(skillsDescription);
+  }
 });

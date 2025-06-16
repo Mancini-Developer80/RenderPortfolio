@@ -1642,8 +1642,6 @@ a[aria-label="Twitter"] i {
   transition: background 0.2s, color 0.2s;
   cursor: pointer;
   text-decoration: none;
-  padding: 0.7rem 1.5rem;
-  display: inline-block;
 }
 
 .case-studies-page .case-studies-section-card a:hover,
@@ -1871,10 +1869,9 @@ a[aria-label="Twitter"] i {
   opacity: 0;
   transform: translateY(60px) scale(0.96) rotate(-4deg);
   filter: blur(12px);
-  transition:
-    opacity 0.7s cubic-bezier(0.4,0,0.2,1),
-    transform 0.7s cubic-bezier(0.4,0,0.2,1),
-    filter 0.7s cubic-bezier(0.4,0,0.2,1);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+    filter 0.7s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: opacity, transform, filter;
 }
 
@@ -1882,7 +1879,7 @@ a[aria-label="Twitter"] i {
   opacity: 1;
   transform: translateY(0) scale(1.04) rotate(0deg);
   filter: blur(0);
-  box-shadow: 0 8px 32px rgba(57, 125, 226, 0.10);
+  box-shadow: 0 8px 32px rgba(57, 125, 226, 0.1);
   transition-delay: 0.08s;
 }
 
@@ -1890,7 +1887,7 @@ a[aria-label="Twitter"] i {
   opacity: 1;
   transform: translateY(0) scale(1.04) rotate(0deg);
   filter: blur(0);
-  box-shadow: 0 8px 32px rgba(96, 239, 255, 0.10);
+  box-shadow: 0 8px 32px rgba(96, 239, 255, 0.1);
   transition-delay: 0.28s;
 }
 
@@ -1899,9 +1896,8 @@ a[aria-label="Twitter"] i {
 .second-about .right-content,
 .second-about .btn-info a {
   opacity: 0;
-  transition:
-    opacity 0.7s cubic-bezier(0.4,0,0.2,1),
-    transform 0.7s cubic-bezier(0.4,0,0.2,1);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: opacity, transform;
 }
 
@@ -1933,4 +1929,62 @@ a[aria-label="Twitter"] i {
 }
 .second-about .btn-info a {
   transform: translateY(60px);
+}
+
+/* Projects section animation */
+.projects .project {
+  opacity: 0;
+  transform: translateY(60px) scale(0.96) rotate(-2deg);
+  filter: blur(10px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+    filter 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform, filter;
+}
+
+.projects .project.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1.03) rotate(0deg);
+  filter: blur(0);
+  box-shadow: 0 8px 32px rgba(57, 125, 226, 0.1);
+}
+
+.projects .project.visible:hover {
+  transform: translateY(-10px) scale(1.06) rotate(0deg);
+  box-shadow: 0 16px 40px rgba(57, 125, 226, 0.18);
+  filter: blur(0);
+}
+
+/* Initial state for scroll animation */
+.skills-heading,
+.skills-description {
+  opacity: 0;
+  transform: translateY(40px) scale(0.97);
+  filter: blur(6px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+    filter 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform, filter;
+}
+
+/* Visible state for scroll-triggered animation */
+.skills-heading.visible,
+.skills-description.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+.skills-heading:hover {
+  color: #397de2;
+  letter-spacing: 2px;
+  transition: color 0.2s, letter-spacing 0.2s;
+}
+
+/* Example hover effect for .skills-description (optional) */
+.skills-description:hover {
+  background: #f0f8ff;
+  box-shadow: 0 4px 24px rgba(57, 125, 226, 0.08);
+  transition: background 0.2s, box-shadow 0.2s;
 }
