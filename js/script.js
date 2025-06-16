@@ -56,4 +56,43 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+
+  // Highlight active nav link automatically
+  // Get current path and hash (for anchors)
+  const currentPath = window.location.pathname.split("/").pop();
+  const currentHash = window.location.hash;
+
+  // Select all nav links (desktop and mobile)
+  const navLinks = document.querySelectorAll(
+    '.navbar ul a, .mobile-menu a'
+  );
+
+  navLinks.forEach(function (link) {
+    // Get the link's href (relative to current location)
+    const linkHref = link.getAttribute("href");
+
+    // For anchor links on index.html
+    if (
+      (currentPath === "" || currentPath === "index.html") &&
+      linkHref.startsWith("#") &&
+      linkHref === currentHash
+    ) {
+      link.classList.add("active");
+    }
+    // For normal page links (about.html, contact.html, etc.)
+    else if (
+      linkHref === currentPath ||
+      // For index.html, also match empty path
+      (linkHref === "index.html" && (currentPath === "" || currentPath === "index.html"))
+    ) {
+      link.classList.add("active");
+    }
+    // For anchor links to index.html#section from other pages
+    else if (
+      linkHref.includes("#") &&
+      (window.location.pathname + window.location.hash).endsWith(linkHref)
+    ) {
+      link.classList.add("active");
+    }
+  });
 });
