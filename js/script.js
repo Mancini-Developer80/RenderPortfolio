@@ -139,4 +139,50 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+
+  // IntersectionObserver for first-about animation (bidirectional)
+  const left = document.querySelector('.first-about .left-content');
+  const right = document.querySelector('.first-about .right-content');
+  if (left && right) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          } else {
+            entry.target.classList.remove('visible');
+          }
+        });
+      },
+      {
+        threshold: 0.3 // Trigger when 30% of the element is visible
+      }
+    );
+    observer.observe(left);
+    observer.observe(right);
+  }
+
+  // IntersectionObserver for second-about animation (bidirectional)
+  const secondLeft = document.querySelector('.second-about .left-content');
+  const secondRight = document.querySelector('.second-about .right-content');
+  const btnInfo = document.querySelector('.second-about .btn-info a');
+  if (secondLeft || secondRight || btnInfo) {
+    const observer2 = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          } else {
+            entry.target.classList.remove('visible');
+          }
+        });
+      },
+      {
+        threshold: 0.3
+      }
+    );
+    if (secondLeft) observer2.observe(secondLeft);
+    if (secondRight) observer2.observe(secondRight);
+    if (btnInfo) observer2.observe(btnInfo);
+  }
 });
