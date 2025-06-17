@@ -857,6 +857,12 @@ a[aria-label="Twitter"] i {
   height: 100vh;
 }
 
+.about-section-list {
+  color: #1a2233;
+  font-size: 1.2rem;
+  line-height: 2.5;
+}
+
 .case-studies > *,
 .about > * {
   position: relative;
@@ -1104,10 +1110,33 @@ a[aria-label="Twitter"] i {
   align-items: flex-start;
 }
 
+.about-section-container-version.about-section-container-version {
+  /* background: none;
+  color: #fff; */
+  max-width: 60%;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+.about-page .about-section-container.about-section-container-version p {
+  color: #333;
+}
+
+.about-page .about-section-container.about-section-container-version .job-role {
+  background-color: #4683df;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  margin: 0 0.4rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+
+  box-shadow: 0 2px 12px rgba(57, 125, 226, 0.15);
+}
+
 .about-page .about-section-title {
   color: #397de2;
   font-size: 2.1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
   letter-spacing: 1px;
   font-weight: 700;
   text-align: left;
@@ -1124,9 +1153,9 @@ a[aria-label="Twitter"] i {
   box-shadow: none;
 }
 
-.about-page .about-section-container p:last-child {
+/* .about-page .about-section-container p:last-child {
   margin-bottom: 0;
-}
+} */
 
 .about-page .about-section-resume {
   margin-top: 2rem;
@@ -1987,4 +2016,66 @@ a[aria-label="Twitter"] i {
   background: #f0f8ff;
   box-shadow: 0 4px 24px rgba(57, 125, 226, 0.08);
   transition: background 0.2s, box-shadow 0.2s;
+}
+
+.btn-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.2rem;
+  width: 100%;
+}
+
+.btn.btn-project {
+  flex: 1 1 0;
+  background: linear-gradient(90deg, #397de2 0%, #60efff 100%);
+  color: #fff;
+  border: none;
+  border-radius: 0.7em;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.7rem 1.1rem;
+  box-shadow: 0 2px 12px rgba(57, 125, 226, 0.08);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.btn.btn-project:hover,
+.btn.btn-project:focus {
+  background: linear-gradient(90deg, #60efff 0%, #397de2 100%);
+  color: #222c3c;
+}
+
+.btn.btn-github {
+  flex: 1 1 0;
+  background: #222c3c;
+  color: #fff;
+  border: none;
+  border-radius: 0.7em;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.7rem 1.1rem;
+  box-shadow: 0 2px 12px rgba(57, 125, 226, 0.08);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.btn.btn-github:hover,
+.btn.btn-github:focus {
+  background: #397de2;
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  .btn-group {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .btn.btn-project,
+  .btn.btn-github {
+    width: 100%;
+  }
 }
