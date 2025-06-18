@@ -676,7 +676,7 @@ a[href="index.html#portfolio"]:focus {
   box-shadow: 0 8px 32px rgba(57, 125, 226, 0.08);
   position: relative;
 }
-
+.skills-heading,
 .case-studies-title,
 .portfolio-heading {
   color: #3c84e3;
@@ -688,9 +688,21 @@ a[href="index.html#portfolio"]:focus {
   text-shadow: 0 2px 8px rgba(96, 239, 255, 0.08);
   transition: transform 0.3s ease;
 }
+.skills-heading:hover,
 .case-studies-title:hover,
 .portfolio-heading:hover {
   transform: skewX(-5deg) scale(1.05);
+}
+
+.skills-heading {
+  font-size: 2.5rem;
+
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(96, 239, 255, 0.08);
 }
 
 .projects-grid {
@@ -1759,7 +1771,7 @@ a[aria-label="Twitter"] i {
   }
 }
 
-.skills-heading {
+/* .skills-heading {
   font-size: 2.2rem;
 
   color: #fff;
@@ -1768,7 +1780,7 @@ a[aria-label="Twitter"] i {
   margin-bottom: 1.2rem;
   text-align: center;
   text-shadow: 0 2px 8px rgba(96, 239, 255, 0.08);
-}
+} */
 
 .skills-description {
   color: #1a2233;
@@ -2006,8 +2018,9 @@ a[aria-label="Twitter"] i {
 }
 
 .skills-heading:hover {
-  color: #397de2;
-  letter-spacing: 2px;
+  /* color: #397de2; */
+  letter-spacing: 4px;
+  transform: scale(1.05) translateY(-2px);
   transition: color 0.2s, letter-spacing 0.2s;
 }
 
