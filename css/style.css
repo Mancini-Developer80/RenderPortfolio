@@ -3023,3 +3023,11 @@ a[aria-label="Twitter"] i {
   color: #60efff;
   text-shadow: 0 4px 16px rgba(57, 125, 226, 0.18);
 }
+
+@media (max-width: 600px) {
+  .hero {
+    background-image: url("../img/HeroMobileBg.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+}
