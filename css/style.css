@@ -628,26 +628,6 @@ img {
   margin-bottom: 1rem;
 }
 
-/* .first-about .frame-left {
-  animation: imgReveal both;
-  animation-timeline: view();
-}
-
-@keyframes imgReveal {
-  from {
-    filter: saturate(0) contrast(4) brightness(0.1) blur(5px);
-    opacity: 0;
-    scale: 0.95;
-    translate: 0 4rem;
-  }
-  to {
-    filter: none;
-    opacity: 1;
-    scale: 1;
-    translate: 0 0;
-  }
-} */
-
 a[href="index.html#portfolio"] {
   color: #397de2;
   font-weight: 600;
@@ -1350,10 +1330,6 @@ a[aria-label="Twitter"] i {
   box-shadow: none;
 }
 
-/* .about-page .about-section-container p:last-child {
-  margin-bottom: 0;
-} */
-
 .about-page .about-section-resume {
   margin-top: 2rem;
   width: 100%;
@@ -1961,17 +1937,6 @@ a[aria-label="Twitter"] i {
     padding: 0.5rem 0.8rem;
   }
 }
-
-/* .skills-heading {
-  font-size: 2.2rem;
-
-  color: #fff;
-  font-weight: 700;
-  letter-spacing: 1px;
-  margin-bottom: 1.2rem;
-  text-align: center;
-  text-shadow: 0 2px 8px rgba(96, 239, 255, 0.08);
-} */
 
 .skills-description {
   color: #1a2233;
@@ -3029,5 +2994,27 @@ a[aria-label="Twitter"] i {
     background-image: url("../img/HeroMobileBg.jpg");
     background-size: cover;
     background-position: center;
+  }
+
+  .portfolio-heading {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 411px) and (max-width: 917px) {
+  .hero .secondary-text {
+    font-size: 1.4rem;
+  }
+
+  .hero .light-text {
+    font-size: 1.1rem;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .contact-links li:first-child {
+    display: none;
   }
 }
