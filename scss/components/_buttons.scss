@@ -19,6 +19,17 @@
   color: #222c3c;
 }
 
+.btn:focus-visible {
+  outline: 3px solid #60efff;
+  outline-offset: 3px;
+}
+
+.btn[aria-disabled="true"] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 .btn--primary {
   background: linear-gradient(90deg, #397de2 0%, #60efff 100%);
   color: #fff;
@@ -204,6 +215,19 @@
 #form-message a.btn:focus {
   background: linear-gradient(90deg, #60efff 0%, #397de2 100%);
   color: #222c3c;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .btn-group .btn,
+  .btn-cases a,
+  .button-pdf .btn-pdf,
+  .case-study-card a,
+  .case-studies-page .case-studies-section-card a,
+  .btn-contact-modern {
+    transition: none;
+  }
 }
 
 .btn.btn-project {

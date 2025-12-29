@@ -52,6 +52,22 @@
   padding: 1.5rem 1.2rem;
 }
 
+.projects-meta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.8rem 0 0.4rem 0;
+}
+
+.projects-meta #projects-count {
+  color: #1a2233;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 0.6rem;
+  padding: 0.4rem 0.8rem;
+  font-weight: 600;
+  box-shadow: 0 2px 12px rgba(57, 125, 226, 0.08);
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -71,6 +87,8 @@
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1),
     border-color 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
 }
 
 .project img {
@@ -80,6 +98,16 @@
   border-top-left-radius: 1.2rem;
   border-top-right-radius: 1.2rem;
   display: block;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.project-info .btn-group {
+  margin-top: auto;
 }
 
 .project:hover {
@@ -296,5 +324,57 @@ a[aria-label="Twitter"] i {
     max-width: 99vw;
     padding: 0.5rem 0.1rem;
     margin: 0 auto;
+  }
+
+  /* Shrink filter buttons for mobile */
+  .portfolio-filters {
+    gap: 0.4rem;
+  }
+  .portfolio-filters .btn {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+    border-radius: 0.6rem;
+  }
+
+  .projects-meta #projects-count {
+    font-size: 0.95rem;
+  }
+}
+
+/* Accessibility and hover polish overrides */
+.project {
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    border-color 0.25s ease;
+  will-change: transform;
+}
+
+.project:focus-within {
+  box-shadow: 0 0 0 3px rgba(96, 239, 255, 0.35);
+}
+
+.project:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(57, 125, 226, 0.18), 0 2px 0 #60efff;
+}
+
+.projects .project.visible:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(57, 125, 226, 0.18);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project {
+    transition: none;
+  }
+  .project:hover,
+  .projects .project.visible:hover {
+    transform: none;
+    box-shadow: 0 8px 24px rgba(57, 125, 226, 0.15);
+  }
+  .projects .project,
+  .projects .project.visible {
+    transform: none;
+    filter: none;
+    transition: none;
   }
 }

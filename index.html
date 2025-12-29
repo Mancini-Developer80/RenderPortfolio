@@ -494,14 +494,95 @@
     </section>
     <section class="portfolio section" id="portfolio">
       <h2 class="portfolio-heading">My Portfolio Projects</h2>
-      <div class="projects projects-grid grid">
-        <div class="project project-1 card card--project">
+      <div
+        class="portfolio-filters cluster cluster--center"
+        role="toolbar"
+        aria-label="Filter projects"
+      >
+        <button
+          class="btn btn--secondary"
+          type="button"
+          data-filter="all"
+          aria-pressed="true"
+        >
+          All
+        </button>
+        <button
+          class="btn btn--secondary"
+          type="button"
+          data-filter="react"
+          aria-pressed="false"
+        >
+          React
+        </button>
+        <button
+          class="btn btn--secondary"
+          type="button"
+          data-filter="angular"
+          aria-pressed="false"
+        >
+          Angular
+        </button>
+        <button
+          class="btn btn--secondary"
+          type="button"
+          data-filter="node"
+          aria-pressed="false"
+        >
+          Node
+        </button>
+        <button
+          class="btn btn--secondary"
+          type="button"
+          data-filter="django"
+          aria-pressed="false"
+        >
+          Django
+        </button>
+        <button
+          class="btn btn--secondary"
+          type="button"
+          data-filter="bootstrap"
+          aria-pressed="false"
+        >
+          Bootstrap
+        </button>
+        <button
+          class="btn btn--secondary"
+          type="button"
+          data-filter="other"
+          aria-pressed="false"
+        >
+          Other
+        </button>
+      </div>
+      <div
+        class="projects-meta"
+        aria-live="polite"
+        aria-atomic="true"
+        style="text-align: center; margin: 0.8rem 0 0.4rem 0"
+      >
+        <span id="projects-count">Showing all projects</span>
+      </div>
+      <div
+        class="projects projects-grid grid"
+        role="list"
+        aria-label="Portfolio projects"
+        id="projects-list"
+      >
+        <div
+          class="project project-1 card card--project"
+          role="listitem"
+          data-tech="bootstrap javascript"
+        >
           <img
             class="card__media"
             src="img/Pokemon_2.png"
             alt="Pokemon App Screenshot"
             loading="lazy"
             decoding="async"
+            width="800"
+            height="220"
           />
           <div class="project-info card__body">
             <h3 class="project-heading card__title">Pokemon App</h3>
@@ -523,16 +604,25 @@
                 class="btn btn-github btn--dark"
                 >Repository</a
               >
+              <a href="pokemoncase.html" class="btn btn--secondary"
+                >Case Study</a
+              >
             </div>
           </div>
         </div>
-        <div class="project project-2 card card--project">
+        <div
+          class="project project-2 card card--project"
+          role="listitem"
+          data-tech="react"
+        >
           <img
             class="card__media"
             src="img/MeetUp.png"
             alt="Meet Up App Screenshot"
             loading="lazy"
             decoding="async"
+            width="800"
+            height="220"
           />
           <div class="project-info card__body">
             <h3 class="project-heading card__title">Meet Up</h3>
@@ -554,16 +644,25 @@
                 class="btn btn-github btn--dark"
                 >Repository</a
               >
+              <a href="meetappcase.html" class="btn btn--secondary"
+                >Case Study</a
+              >
             </div>
           </div>
         </div>
-        <div class="project project-3 card card--project">
+        <div
+          class="project project-3 card card--project"
+          role="listitem"
+          data-tech="react"
+        >
           <img
             class="card__media"
             src="img/myFlix.png"
             alt="My Flix React Screenshot"
             loading="lazy"
             decoding="async"
+            width="800"
+            height="220"
           />
           <div class="project-info card__body">
             <h3 class="project-heading card__title">My Flix</h3>
@@ -585,16 +684,25 @@
                 class="btn btn-github btn--dark"
                 >Repository</a
               >
+              <a href="myflixcase.html" class="btn btn--secondary"
+                >Case Study</a
+              >
             </div>
           </div>
         </div>
-        <div class="project project-4 card card--project">
+        <div
+          class="project project-4 card card--project"
+          role="listitem"
+          data-tech="angular"
+        >
           <img
             class="card__media"
             src="img/MyFlixAngularApp.png"
             alt="My Flix Angular Screenshot"
             loading="lazy"
             decoding="async"
+            width="800"
+            height="220"
           />
           <div class="project-info card__body">
             <h3 class="project-heading card__title">My Flix Angular</h3>
@@ -617,16 +725,25 @@
                 class="btn btn-github btn--dark"
                 >Repository</a
               >
+              <a href="angularmyflixcase.html" class="btn btn--secondary"
+                >Case Study</a
+              >
             </div>
           </div>
         </div>
-        <div class="project project-6 card card--project">
+        <div
+          class="project project-6 card card--project"
+          role="listitem"
+          data-tech="react typescript node"
+        >
           <img
             class="card__media"
             src="img/chartDashboard.png"
             alt="Job Tracker App Screenshot"
             loading="lazy"
             decoding="async"
+            width="800"
+            height="220"
           />
           <div class="project-info card__body">
             <h3 class="project-heading card__title">Job Tracker</h3>
@@ -649,16 +766,25 @@
                 class="btn btn-github btn--dark"
                 >Repository</a
               >
+              <a href="jobtracker.html" class="btn btn--secondary"
+                >Case Study</a
+              >
             </div>
           </div>
         </div>
-        <div class="project project-5 card card--project">
+        <div
+          class="project project-5 card card--project"
+          role="listitem"
+          data-tech="other"
+        >
           <img
             class="card__media"
             src="img/promontoliohome.png"
             alt="Promontolio App Screenshot"
             loading="lazy"
             decoding="async"
+            width="800"
+            height="220"
           />
           <div class="project-info card__body">
             <h3 class="project-heading card__title">Promontolio Blog</h3>
@@ -680,6 +806,41 @@
                 target="_blank"
                 class="btn btn-github btn--dark"
                 >Repository</a
+              >
+              <a href="promontoliocase.html" class="btn btn--secondary"
+                >Case Study</a
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          class="project project-7 card card--project"
+          role="listitem"
+          data-tech="django"
+        >
+          <span class="badge badge--soon">Coming Soon</span>
+          <img
+            class="card__media"
+            src="img/globalBusiness.jpg"
+            alt="Django Project placeholder"
+            loading="lazy"
+            decoding="async"
+            width="800"
+            height="220"
+          />
+          <div class="project-info card__body">
+            <h3 class="project-heading card__title">Django Project</h3>
+            <p class="project-description card__text">
+              Coming soon: a Django-based application showcasing robust back-end
+              architecture, secure auth, and clean admin workflows.
+            </p>
+            <div class="btn-group card__actions">
+              <a
+                class="btn btn--ghost"
+                aria-disabled="true"
+                role="button"
+                tabindex="-1"
+                >Coming Soon</a
               >
             </div>
           </div>

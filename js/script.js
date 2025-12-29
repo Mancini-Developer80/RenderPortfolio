@@ -231,4 +231,63 @@ document.addEventListener("DOMContentLoaded", function () {
     if (skillsHeading) skillsObserver.observe(skillsHeading);
     if (skillsDescription) skillsObserver.observe(skillsDescription);
   }
+
+  // Portfolio filters: quick project subset by tech
+  const filterBar = document.querySelector(".portfolio-filters");
+  const filterButtons = filterBar
+    ? filterBar.querySelectorAll("button[data-filter]")
+    : [];
+  const projectList = document.getElementById("projects-list");
+  const projects = projectList ? projectList.querySelectorAll(".project") : [];
+  const projectsCount = document.getElementById("projects-count");
+
+  function updateProjectsCount() {
+    if (!projectsCount) return;
+    const total = projects.length;
+    let visible = 0;
+    projects.forEach((card) => {
+      const isHidden = card.hidden || card.style.display === "none";
+      if (!isHidden) visible += 1;
+    });
+    if (visible === total) {
+      projectsCount.textContent = `Showing all ${total} projects`;
+    } else {
+      projectsCount.textContent = `Showing ${visible} of ${total} projects`;
+    }
+  }
+
+  function applyFilter(filter) {
+    projects.forEach((card) => {
+      const tech = (card.getAttribute("data-tech") || "").toLowerCase();
+      const match = filter === "all" || tech.split(/\s+/).includes(filter);
+      // Hide via both hidden attribute and inline style for robustness
+      card.hidden = !match;
+      card.style.display = match ? "" : "none";
+    });
+    updateProjectsCount();
+  }
+
+  function setActiveButton(activeBtn) {
+    filterButtons.forEach((btn) => {
+      const isActive = btn === activeBtn;
+      btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+      btn.classList.toggle("btn--primary", isActive);
+      btn.classList.toggle("btn--secondary", !isActive);
+    });
+  }
+
+  if (filterButtons.length && projects.length) {
+    filterButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const filter = btn.getAttribute("data-filter");
+        applyFilter(filter);
+        setActiveButton(btn);
+      });
+    });
+    // Initialize to 'all'
+    applyFilter("all");
+  } else {
+    // Still initialize count if filters are missing
+    updateProjectsCount();
+  }
 });
