@@ -1,0 +1,171 @@
+/* Hero section */
+.hero {
+  padding: 14rem 0;
+  background-image: url("../img/rahul-mishra-1200.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.35);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.content {
+  z-index: 3;
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.content h1 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background: none;
+}
+
+.content .main-text {
+  position: relative;
+  display: inline-block;
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--text-color);
+  letter-spacing: 2px;
+  z-index: 1;
+  padding: 0.5em 1em;
+  text-shadow: 0 2px 16px var(--secondary-color), 0 1px 2px var(--primary-color),
+    2px 2px 8px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  animation: slideInLeft 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.content .main-text::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    var(--secondary-color) 0%,
+    var(--primary-color) 80%
+  );
+  filter: blur(10px);
+  opacity: 0.35;
+  z-index: -1;
+  border-radius: 0.7em;
+}
+
+.content .secondary-text {
+  display: block;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #f8faff;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7), 0 2px 8px rgba(96, 239, 255, 0.4);
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  opacity: 0;
+  animation: slideInRight 1s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards;
+}
+
+.content .light-text {
+  display: block;
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: 300;
+  color: #e0f7ff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6), 0 1px 6px rgba(96, 239, 255, 0.3);
+  margin-top: 0.5rem;
+  letter-spacing: 1px;
+  opacity: 0;
+  animation: slideInLeft 1s cubic-bezier(0.4, 0, 0.2, 1) 0.8s forwards;
+}
+
+.content .social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.content .social img {
+  width: 70px;
+  filter: brightness(0) invert(1);
+  z-index: 3;
+}
+
+.content .social img:hover {
+  filter: brightness(1.2) invert(0.8);
+  transform: scale(1.1);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+@media (max-width: 400px) {
+  .content .main-text {
+    font-size: 1.1rem;
+    text-align: center;
+    word-break: break-word;
+    padding: 0 0.2rem;
+    line-height: 1.2;
+  }
+
+  .content .secondary-text {
+    font-size: 0.95rem;
+    text-align: center;
+    word-break: break-word;
+    padding: 0 0.2rem;
+    line-height: 1.2;
+  }
+
+  .content .light-text {
+    font-size: 0.85rem;
+    text-align: center;
+    word-break: break-word;
+    padding: 0 0.2rem;
+    line-height: 1.3;
+    letter-spacing: 0.2px;
+    margin-top: 0.2rem;
+  }
+}
+
+@media (min-width: 411px) and (max-width: 917px) {
+  .hero .secondary-text {
+    font-size: 1.4rem;
+  }
+
+  .hero .light-text {
+    font-size: 1.1rem;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    background-image: url("../img/HeroMobileBg.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+}

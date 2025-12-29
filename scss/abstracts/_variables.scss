@@ -1,0 +1,23 @@
+// Global design tokens.
+$primary-color: #397de2;
+$secondary-color: #60efff;
+$text-color: #fff;
+$background-color: #ffffff;
+$box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.35);
+
+$breakpoints: (
+  xs: 400px,
+  sm: 600px,
+  md: 800px,
+  lg: 992px,
+  xl: 1200px,
+);
+
+// CSS custom properties for runtime use.
+:root {
+  --primary-color: #{$primary-color};
+  --secondary-color: #{$secondary-color};
+  --text-color: #{$text-color};
+  --background-color: #{$background-color};
+  --box-shadow: #{$box-shadow};
+}

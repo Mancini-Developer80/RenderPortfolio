@@ -1,0 +1,24 @@
+@use "variables" as v;
+
+// Media query helper keyed by $breakpoints map.
+@mixin respond($bp) {
+  @media (max-width: map-get(v.$breakpoints, $bp)) {
+    @content;
+  }
+}
+
+// Primary gradient background.
+@mixin gradient-primary {
+  background: linear-gradient(
+    135deg,
+    v.$secondary-color 0%,
+    v.$primary-color 100%
+  );
+}
+
+// Simple card surface.
+@mixin card {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px rgba(57, 125, 226, 0.13);
+}
