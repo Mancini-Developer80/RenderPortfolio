@@ -87,13 +87,11 @@
         <div class="overview">
           <h1>MyFlix Case Study - Overview</h1>
           <p>
-            My Flix is a web application built on the powerful MERN (MongoDB,
-            Express, React, Node.js) stack, which leverages JavaScript across
-            both backend and frontend development. The application enables users
-            to explore curated details about top-rated movies—including
-            information on directors, genres, and casts. In addition to browsing
-            content, users can create an account, update their personal details,
-            and compile a personalized list of their favorite films.
+            A full‑stack MERN application demonstrating production patterns:
+            React component architecture, a Node/Express REST API, MongoDB data
+            models, and JWT‑secured auth with protected routes. Users browse and
+            search films, view director/genre details, and manage persistent
+            favorites—delivered through a responsive, accessible UI.
           </p>
         </div>
         <div class="technologies">
@@ -109,7 +107,7 @@
               </ul>
             </div>
             <div class="screenshot-img">
-              <img src="./img/MyFlix_Code.png" alt="" />
+              <img src="./img/MyFlix_Code.png" alt="MyFlix code and UI" />
             </div>
           </div>
         </div>
@@ -117,10 +115,70 @@
         <div class="content-features">
           <h2>Features</h2>
           <ul>
-            <li>User authentication and authorization</li>
-            <li>Movie browsing and searching</li>
-            <li>Responsive design for mobile and desktop</li>
-            <li>RESTful API integration</li>
+            <li>
+              <strong>JWT authentication:</strong> Secure login and protected
+              routes.
+            </li>
+            <li>
+              <strong>Rich browsing:</strong> Search, director/genre detail
+              views, and pagination.
+            </li>
+            <li>
+              <strong>Responsive UI:</strong> Mobile‑first layout and accessible
+              components.
+            </li>
+            <li>
+              <strong>REST API:</strong> Express routes and MongoDB models for
+              movies and users.
+            </li>
+            <li>
+              <strong>Favorites persistence:</strong> Keep starred titles across
+              sessions.
+            </li>
+          </ul>
+        </div>
+        <div class="architecture">
+          <h2>Architecture</h2>
+          <ul>
+            <li>
+              <strong>React components:</strong> Feature‑based structure and
+              reusable UI units.
+            </li>
+            <li>
+              <strong>Service layer:</strong> Encapsulated fetch calls with
+              standardized responses.
+            </li>
+            <li>
+              <strong>Routing:</strong> Protected views enforced by JWT checks.
+            </li>
+            <li>
+              <strong>Data models:</strong> MongoDB schemas for movies, users,
+              favorites.
+            </li>
+            <li>
+              <strong>Performance:</strong> Batched updates and minimal reflows.
+            </li>
+          </ul>
+        </div>
+        <div class="technical-challenges">
+          <h2>Technical Challenges</h2>
+          <ul>
+            <li>
+              <strong>Auth flows:</strong> Handling token expiry and redirect
+              UX.
+            </li>
+            <li>
+              <strong>State & routing:</strong> Managing protected navigation
+              across views.
+            </li>
+            <li>
+              <strong>Data consistency:</strong> Syncing favorites between
+              client and server.
+            </li>
+            <li>
+              <strong>Accessibility:</strong> Keyboard navigation and ARIA
+              labels.
+            </li>
           </ul>
         </div>
         <div class="user-problem">
@@ -205,20 +263,32 @@
             © 2025 Giuseppe Mancini | Full Stack Web Developer | All rights
             reserved.
           </p>
-          <a
-            href="https://www.linkedin.com/in/giuseppe-mancini-developer/"
-            target="_blank"
-            aria-label="LinkedIn"
-          >
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a
-            href="https://github.com/Mancini-Developer80"
-            target="_blank"
-            aria-label="GitHub"
-          >
-            <i class="fab fa-github"></i>
-          </a>
+          <div class="social-list">
+            <a
+              class="social-link"
+              href="https://www.linkedin.com/in/giuseppe-mancini-developer/"
+              target="_blank"
+              aria-label="LinkedIn"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+              class="social-link"
+              href="https://github.com/Mancini-Developer80"
+              target="_blank"
+              aria-label="GitHub"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+            <a
+              class="social-link"
+              href="https://twitter.com/yourusername"
+              target="_blank"
+              aria-label="X (Twitter)"
+            >
+              <i class="fab fa-x-twitter"></i>
+            </a>
+          </div>
         </div>
       </div>
     </footer>

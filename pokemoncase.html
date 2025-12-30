@@ -87,12 +87,13 @@
         <div class="overview">
           <h1>Pokemon App - Overview</h1>
           <p>
-            The Pokémon App is a polished browser-based web application built
-            with vanilla JavaScript, HTML, and CSS that consumes the public
-            PokéAPI to provide real-time browsing, searching, and favoriting of
-            Pokémon. Leveraging ES6 modules and a responsive design, it delivers
-            a seamless, engaging experience across devices while showcasing
-            advanced front-end skills in API integration and state management.
+            A performance‑optimized single‑page application built in vanilla
+            JavaScript, HTML5, and CSS3 that integrates the public PokéAPI. The
+            app demonstrates core front‑end engineering: a modular ES6
+            architecture, a dedicated API service layer with robust error
+            handling, centralized state management (search, results, favorites)
+            without frameworks, and mobile‑first UI with lazy‑loaded images for
+            fast rendering.
           </p>
         </div>
         <div class="technologies">
@@ -118,7 +119,6 @@
                 </li>
               </ul>
             </div>
-            ```
             <div class="screenshot-img">
               <img src="./img/Pokemon_1.png" alt="" />
             </div>
@@ -129,31 +129,91 @@
           <h2>Features</h2>
           <ul>
             <li>
-              <strong>Responsive Design:</strong> The app is designed to be
-              fully responsive, ensuring a seamless experience across all
-              devices.
+              <strong>Mobile‑first layout:</strong> CSS Grid/Flexbox with tuned
+              rendering for smooth interactions on all devices.
             </li>
             <li>
-              <strong>Search Functionality:</strong> Users can easily search for
-              specific Pokémon using a dedicated search bar.
+              <strong>Debounced search:</strong> 300ms debounce reduces API
+              calls while keeping typing responsive.
             </li>
-
             <li>
-              <strong>RESTful API Integration:</strong> The app utilizes a
-              RESTful API for efficient data retrieval and management.
+              <strong>Favorites persistence:</strong> LocalStorage keeps starred
+              Pokémon across sessions.
+            </li>
+            <li>
+              <strong>API service layer:</strong> Encapsulated fetch with
+              loading and error states, plus pagination helpers.
+            </li>
+            <li>
+              <strong>ES6 modules & components:</strong> Reusable utilities and
+              views for scalable organization without frameworks.
+            </li>
+            <li>
+              <strong>Lazy‑loaded images:</strong> IntersectionObserver defers
+              image loading to speed up first paint.
+            </li>
+          </ul>
+        </div>
+        <div class="architecture">
+          <h2>Architecture</h2>
+          <ul>
+            <li>
+              <strong>ES6 Modules:</strong> Separate files for views, services,
+              and helpers.
+            </li>
+            <li>
+              <strong>State Management:</strong> Central state for search,
+              results, favorites updated via pure functions.
+            </li>
+            <li>
+              <strong>API Service:</strong> Promise‑based wrapper around PokéAPI
+              with standardized responses and errors.
+            </li>
+            <li>
+              <strong>Persistence:</strong> LocalStorage abstraction for
+              favorites.
+            </li>
+            <li>
+              <strong>Performance:</strong> IntersectionObserver for lazy
+              images; batched DOM updates.
+            </li>
+          </ul>
+        </div>
+        <div class="technical-challenges">
+          <h2>Technical Challenges</h2>
+          <ul>
+            <li>
+              <strong>Framework‑less composition:</strong> Reusable components
+              and DOM updates without React/Vue.
+            </li>
+            <li>
+              <strong>Debounce & UX balance:</strong> Limiting requests while
+              maintaining a snappy UI.
+            </li>
+            <li>
+              <strong>Pagination & batching:</strong> Efficiently handling
+              larger PokéAPI datasets.
+            </li>
+            <li>
+              <strong>Error handling:</strong> Graceful fallbacks for network
+              failures and rate limits.
+            </li>
+            <li>
+              <strong>Accessibility:</strong> Keyboard navigation and ARIA roles
+              for lists and modals.
             </li>
           </ul>
         </div>
         <div class="user-problem">
           <h2>User Problem</h2>
           <p>
-            Many Pokémon fans find it challenging to keep track of their
-            favorite characters and access detailed information about them in
-            one convenient location. The Pokémon App addresses this issue by
-            providing a seamless interface where users can discover and organize
-            their preferred Pokémon while accessing in-depth details about each
-            character. The Pokémon App enhances the Pokémon discovery
-            experience, making it more personalized and engaging.
+            Many apps rely on heavyweight frameworks to deliver basic features
+            like search and favorites. This project demonstrates how to build a
+            production‑quality experience in
+            <strong>vanilla JavaScript</strong>, integrating a third‑party API,
+            persisting user preferences, and maintaining fast
+            performance—showcasing core skills that transfer to any modern
+            stack.
           </p>
         </div>
         <div class="purpose">
@@ -169,12 +229,12 @@
             </p>
           </div>
           <div class="purpose-img">
-            <img src="./img/MyFlix_2.png" alt="My Flix Case Study" />
+            <img src="./img/Pokemon_2.png" alt="Pokemon App screenshot" />
           </div>
         </div>
         <div class="accomplishmenst">
           <div class="accomplishment-img">
-            <img src="./img/MyFlix_1.png" alt="" />
+            <img src="./img/Pokemon_1.png" alt="Pokemon App UI" />
           </div>
           <div class="accomplishment-text">
             <h2>Accomplishments</h2>
@@ -202,7 +262,7 @@
             </p>
           </div>
           <div class="consideration-img">
-            <img src="./img/MyFlix_Code.png" alt="" />
+            <img src="./img/Pokemon_2.png" alt="Pokemon App code and UI" />
           </div>
         </div>
         <!-- <div class="case-pdf">
@@ -228,20 +288,32 @@
             © 2025 Giuseppe Mancini | Full Stack Web Developer | All rights
             reserved.
           </p>
-          <a
-            href="https://www.linkedin.com/in/giuseppe-mancini-developer/"
-            target="_blank"
-            aria-label="LinkedIn"
-          >
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a
-            href="https://github.com/Mancini-Developer80"
-            target="_blank"
-            aria-label="GitHub"
-          >
-            <i class="fab fa-github"></i>
-          </a>
+          <div class="social-list">
+            <a
+              class="social-link"
+              href="https://www.linkedin.com/in/giuseppe-mancini-developer/"
+              target="_blank"
+              aria-label="LinkedIn"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+              class="social-link"
+              href="https://github.com/Mancini-Developer80"
+              target="_blank"
+              aria-label="GitHub"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+            <a
+              class="social-link"
+              href="https://twitter.com/yourusername"
+              target="_blank"
+              aria-label="X (Twitter)"
+            >
+              <i class="fab fa-x-twitter"></i>
+            </a>
+          </div>
         </div>
       </div>
     </footer>

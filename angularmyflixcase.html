@@ -86,11 +86,12 @@
         <div class="overview">
           <h1>My Flix Angular - Overview</h1>
           <p>
-            My Flix Angular App is a full-featured movie database that empowers
-            users to discover, search and curate favorite films. Powered by an
-            Angular frontend, Node.js/Express backend, and MongoDB, it delivers
-            JWT-secured authentication, RESTful API integration, and a fully
-            responsive design for rich, seamless browsing on any device.
+            A production‑ready Angular application backed by a Node.js/Express
+            API and MongoDB. It showcases framework‑level engineering:
+            component‑driven architecture, RxJS‑based data flows, HTTP
+            interceptors for auth, route guards for protected views, and a
+            mobile‑first UI. Favorites persist client‑side while a REST API
+            powers browsing and detail views.
           </p>
         </div>
         <div class="technologies">
@@ -122,7 +123,10 @@
             </div>
 
             <div class="screenshot-img">
-              <img src="./img/MyFlixAngularApp.png" alt="" />
+              <img
+                src="./img/MyFlixAngularApp.png"
+                alt="MyFlix Angular app screenshot"
+              />
             </div>
           </div>
         </div>
@@ -130,13 +134,72 @@
         <div class="content-features">
           <h2>Features</h2>
           <ul>
-            <li>JWT-secured user authentication and authorization</li>
             <li>
-              Angular-powered movie browsing, searching, and detailed views
+              <strong>JWT auth + route guards:</strong> Protected views with
+              token handling via interceptors.
             </li>
-            <li>Responsive design for seamless UX on any device</li>
-            <li>RESTful API integration with Node.js/Express and MongoDB</li>
-            <li>User-curated favorites and personalized watchlists</li>
+            <li>
+              <strong>RxJS data flows:</strong> Observables power search, detail
+              fetches, and UI reactivity.
+            </li>
+            <li>
+              <strong>Mobile‑first UI:</strong> Responsive, accessible
+              components optimized for performance.
+            </li>
+            <li>
+              <strong>REST API integration:</strong> Node/Express + MongoDB for
+              movies, genres, directors.
+            </li>
+            <li>
+              <strong>Favorites persistence:</strong> Client‑side storage for
+              watchlists and starred titles.
+            </li>
+          </ul>
+        </div>
+        <div class="architecture">
+          <h2>Architecture</h2>
+          <ul>
+            <li>
+              <strong>Angular modules & components:</strong> Feature‑oriented
+              structure with shared utilities.
+            </li>
+            <li>
+              <strong>Services layer:</strong> Encapsulated HTTP client with
+              interceptors and typed responses.
+            </li>
+            <li>
+              <strong>Routing:</strong> Guarded routes for auth‑required views
+              and lazy detail loading.
+            </li>
+            <li>
+              <strong>Persistence:</strong> LocalStorage abstraction for
+              favorites/watchlists.
+            </li>
+            <li>
+              <strong>Backend:</strong> Express routes, MongoDB models, JWT
+              issuance/verification.
+            </li>
+          </ul>
+        </div>
+        <div class="technical-challenges">
+          <h2>Technical Challenges</h2>
+          <ul>
+            <li>
+              <strong>Token lifecycle:</strong> Handling refresh/expiry with
+              minimal UX disruption.
+            </li>
+            <li>
+              <strong>Reactive composition:</strong> Managing complex stream
+              combinations in RxJS.
+            </li>
+            <li>
+              <strong>Performance:</strong> Avoiding redundant API calls and
+              minimizing reflows.
+            </li>
+            <li>
+              <strong>Accessibility:</strong> Keyboard navigation and ARIA roles
+              for dynamic views.
+            </li>
           </ul>
         </div>
         <div class="user-problem">
@@ -235,6 +298,14 @@
               aria-label="GitHub"
             >
               <i class="fab fa-github"></i>
+            </a>
+            <a
+              class="social-link"
+              href="https://twitter.com/yourusername"
+              target="_blank"
+              aria-label="X (Twitter)"
+            >
+              <i class="fab fa-x-twitter"></i>
             </a>
           </div>
         </div>

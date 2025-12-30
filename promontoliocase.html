@@ -124,7 +124,10 @@
             </div>
 
             <div class="screenshot-img">
-              <img src="./img/MediaLibrary.png" alt="" />
+              <img
+                src="./img/MediaLibrary.png"
+                alt="Promontolio CMS media library"
+              />
             </div>
           </div>
         </div>
@@ -170,6 +173,51 @@
               : Sensitive information such as database credentials and API keys
               are securely managed using environment variables, ensuring the
               safety of sensitive data and preventing unauthorized access.
+            </li>
+          </ul>
+        </div>
+        <div class="architecture">
+          <h2>Architecture</h2>
+          <ul>
+            <li>
+              <strong>MVC (Express + EJS):</strong> Clear separation of
+              concerns.
+            </li>
+            <li>
+              <strong>Auth:</strong> Passport.js with role‑based access control.
+            </li>
+            <li>
+              <strong>Media:</strong> Cloudinary integration for upload and CDN
+              delivery.
+            </li>
+            <li>
+              <strong>Admin UI:</strong> Server‑rendered templates with SASS
+              components.
+            </li>
+            <li>
+              <strong>Config & security:</strong> Environment variables and
+              hardened routes.
+            </li>
+          </ul>
+        </div>
+        <div class="technical-challenges">
+          <h2>Technical Challenges</h2>
+          <ul>
+            <li>
+              <strong>RBAC design:</strong> Ensuring secure, maintainable role
+              policies.
+            </li>
+            <li>
+              <strong>File handling:</strong> Validations, resizing, and safe
+              delivery via Cloudinary.
+            </li>
+            <li>
+              <strong>SEO concerns:</strong> Slugs, meta, and structured data
+              for visibility.
+            </li>
+            <li>
+              <strong>Deployment:</strong> Environment management and
+              zero‑downtime updates.
             </li>
           </ul>
         </div>
@@ -287,20 +335,32 @@
             © 2025 Giuseppe Mancini | Full Stack Web Developer | All rights
             reserved.
           </p>
-          <a
-            href="https://www.linkedin.com/in/giuseppe-mancini-developer/"
-            target="_blank"
-            aria-label="LinkedIn"
-          >
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a
-            href="https://github.com/Mancini-Developer80"
-            target="_blank"
-            aria-label="GitHub"
-          >
-            <i class="fab fa-github"></i>
-          </a>
+          <div class="social-list">
+            <a
+              class="social-link"
+              href="https://www.linkedin.com/in/giuseppe-mancini-developer/"
+              target="_blank"
+              aria-label="LinkedIn"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+              class="social-link"
+              href="https://github.com/Mancini-Developer80"
+              target="_blank"
+              aria-label="GitHub"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+            <a
+              class="social-link"
+              href="https://twitter.com/yourusername"
+              target="_blank"
+              aria-label="X (Twitter)"
+            >
+              <i class="fab fa-x-twitter"></i>
+            </a>
+          </div>
         </div>
       </div>
     </footer>
