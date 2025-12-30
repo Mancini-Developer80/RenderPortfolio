@@ -147,6 +147,15 @@
   box-shadow: 0 2px 16px rgba(57, 125, 226, 0.08);
 }
 
+/* Base container for case study sections */
+.case-section {
+  margin: 2.5rem 0 2rem 0;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  background: rgba(96, 239, 255, 0.07);
+  border-radius: 1.1rem;
+  box-shadow: 0 2px 16px rgba(57, 125, 226, 0.08);
+}
+
 .content-features h2 {
   color: #397de2;
   font-size: 1.35rem;
@@ -157,9 +166,24 @@
   padding-left: 0.7rem;
 }
 
+/* Unified section heading styles */
+.user-problem h2,
+.purpose-content h2,
+.technologies h2,
+.architecture h2,
+.technical-challenges h2 {
+  color: #397de2;
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 1.1rem;
+  letter-spacing: 0.5px;
+  border-left: 4px solid #60efff;
+  padding-left: 0.7rem;
+}
+
 .content-features ul {
-  list-style: disc inside;
-  padding-left: 1.2rem;
+  list-style: none;
+  padding-left: 1rem;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -171,12 +195,93 @@
   color: #1a2233;
   background: rgba(255, 255, 255, 0.85);
   border-radius: 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.2rem;
   box-shadow: 0 1px 6px rgba(57, 125, 226, 0.06);
   transition: background 0.18s;
 }
 
 .content-features li:hover {
+  background: #eaf6ff;
+}
+
+/* Architecture section */
+.architecture {
+  margin: 2.5rem 0 2rem 0;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  background: rgba(96, 239, 255, 0.07);
+  border-radius: 1.1rem;
+  box-shadow: 0 2px 16px rgba(57, 125, 226, 0.08);
+}
+
+.architecture ul {
+  list-style: none;
+  padding-left: 1rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.content-features ul,
+.architecture ul,
+.technical-challenges ul {
+  padding-left: 0.7rem;
+}
+
+.architecture li {
+  font-size: 1.08rem;
+  color: #1a2233;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  box-shadow: 0 1px 6px rgba(57, 125, 226, 0.06);
+  transition: background 0.18s;
+}
+
+.architecture li:hover {
+  background: #eaf6ff;
+}
+
+/* Technical challenges section */
+.technical-challenges {
+  margin: 2.5rem 0 2rem 0;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  background: rgba(96, 239, 255, 0.07);
+  border-radius: 1.1rem;
+  box-shadow: 0 2px 16px rgba(57, 125, 226, 0.08);
+}
+
+.technical-challenges ul {
+  list-style: none;
+  padding-left: 1rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+/* Icon bullets for unified section lists */
+.case-section li {
+  position: relative;
+  padding-left: 0.5rem;
+  line-height: 1.6;
+}
+
+.case-section li::before {
+  content: none;
+}
+
+.technical-challenges li {
+  font-size: 1.08rem;
+  color: #1a2233;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  box-shadow: 0 1px 6px rgba(57, 125, 226, 0.06);
+  transition: background 0.18s;
+}
+
+.technical-challenges li:hover {
   background: #eaf6ff;
 }
 
@@ -604,12 +709,38 @@
     padding: 1.2rem 0.5rem 1rem 0.5rem;
   }
 
+  .content-features ul,
+  .architecture ul {
+    padding-left: 0.7rem;
+  }
+
+  .case-section {
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+  }
+
+  .architecture,
+  .technical-challenges {
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+  }
+
   .content-features h2 {
     font-size: 1.1rem;
     padding-left: 0.4rem;
   }
 
+  .architecture h2,
+  .technical-challenges h2 {
+    font-size: 1.1rem;
+    padding-left: 0.4rem;
+  }
+
   .content-features li {
+    font-size: 0.98rem;
+    padding: 0.4rem 0.7rem;
+  }
+
+  .architecture li,
+  .technical-challenges li {
     font-size: 0.98rem;
     padding: 0.4rem 0.7rem;
   }
