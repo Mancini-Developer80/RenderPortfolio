@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Project gallery with filters by technology."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Projects | Filters</title>
+  </head>
+  <body class="projects-page">
+    <header class="header" id="home">
+      <nav class="navbar">
+        <div class="container flex-container">
+          <div class="logo">
+            <a href="index.html" aria-label="Homepage">
+              <img src="./img/SVGdev/SVG/Risorsa 2.svg" alt="Logo" />
+            </a>
+          </div>
+          <div class="main-list-items">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Me</a></li>
+              <li><a href="projects.html" aria-current="page">Projects</a></li>
+              <li><a href="blog.html" class="blog-link">Blog</a></li>
+            </ul>
+          </div>
+          <div class="mobile-list-items">
+            <button
+              class="mobile-menu-toggle"
+              aria-label="Open navigation menu"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+              type="button"
+            >
+              <i class="fas fa-bars fa-2x"></i>
+            </button>
+            <ul class="mobile-menu" id="mobile-menu" aria-hidden="true">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Me</a></li>
+              <li><a href="projects.html" aria-current="page">Projects</a></li>
+              <li><a href="blog.html" class="blog-link">Blog</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="projects-section section" id="projects">
+      <h2 class="projects-heading">All Projects</h2>
+      <div
+        class="projects-filters cluster cluster--center"
+        role="toolbar"
+        aria-label="Filter projects"
+      >
+        <button
+          class="btn btn--primary"
+          type="button"
+          data-filter="all"
+          aria-pressed="true"
+        >
+          All
+        </button>
+        <button
+          class="btn btn--secondary"
+          type="button"
+          data-filter="react"
+          aria-pressed="false"
+        >
+          React
+        </button>
+        <button
+          class="btn btn--secondary"
+          type="button"
+          data-filter="angular"
+          aria-pressed="false"
+        >
+          Angular
+        </button>
+        <button
+          class="btn btn--secondary"
+          type="button"
+          data-filter="node"
+          aria-pressed="false"
+        >
+          Node
+        </button>
+        <button
+          class="btn btn--secondary"
+          type="button"
+          data-filter="django"
+          aria-pressed="false"
+        >
+          Django
+        </button>
+        <button
+          class="btn btn--secondary"
+          type="button"
+          data-filter="bootstrap"
+          aria-pressed="false"
+        >
+          Bootstrap
+        </button>
+        <button
+          class="btn btn--secondary"
+          type="button"
+          data-filter="other"
+          aria-pressed="false"
+        >
+          Other
+        </button>
+      </div>
+      <div
+        class="projects-meta"
+        aria-live="polite"
+        aria-atomic="true"
+        style="text-align: center; margin: 0.8rem 0 0.4rem 0"
+      >
+        <span id="projects-count">Showing all projects</span>
+      </div>
+
+      <div
+        class="projects projects-grid grid"
+        role="list"
+        aria-label="Projects"
+        id="projects-gallery"
+      >
+        <!-- Pokemon App -->
+        <div
+          class="project project-1 card card--project"
+          role="listitem"
+          data-tech="bootstrap javascript"
+        >
+          <img
+            class="card__media"
+            src="img/Pokemon_2.png"
+            alt="Pokemon App Screenshot"
+            loading="lazy"
+            decoding="async"
+            width="800"
+            height="220"
+          />
+          <div class="project-info card__body">
+            <h3 class="project-heading card__title">Pokemon App</h3>
+            <p class="project-description card__text">
+              A responsive web application built with HTML, CSS, JavaScript, and
+              Bootstrap to browse Pokémon profiles.
+            </p>
+            <div class="btn-group card__actions">
+              <a
+                href="https://mancini-developer80.github.io/PokemonAppBootstrap/"
+                target="_blank"
+                class="btn btn-project btn--primary"
+                >View Project</a
+              >
+              <a
+                href="https://github.com/Mancini-Developer80/PokemonAppBootstrap"
+                target="_blank"
+                class="btn btn-github btn--dark"
+                >Repository</a
+              >
+              <a href="pokemoncase.html" class="btn btn--secondary"
+                >Case Study</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Meet Up -->
+        <div
+          class="project project-2 card card--project"
+          role="listitem"
+          data-tech="react"
+        >
+          <img
+            class="card__media"
+            src="img/MeetUp.png"
+            alt="Meet Up App Screenshot"
+            loading="lazy"
+            decoding="async"
+            width="800"
+            height="220"
+          />
+          <div class="project-info card__body">
+            <h3 class="project-heading card__title">Meet Up</h3>
+            <p class="project-description card__text">
+              A serverless PWA using React and Google Calendar API with TDD.
+            </p>
+            <div class="btn-group card__actions">
+              <a
+                href="https://meet-app-git-main-giuseppes-projects-44470569.vercel.app/"
+                target="_blank"
+                class="btn btn-project btn--primary"
+                >View Project</a
+              >
+              <a
+                href="https://github.com/Mancini-Developer80/MeetApp"
+                target="_blank"
+                class="btn btn-github btn--dark"
+                >Repository</a
+              >
+              <a href="meetappcase.html" class="btn btn--secondary"
+                >Case Study</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- My Flix Angular -->
+        <div
+          class="project project-4 card card--project"
+          role="listitem"
+          data-tech="angular"
+        >
+          <img
+            class="card__media"
+            src="img/MyFlixAngularApp.png"
+            alt="My Flix Angular Screenshot"
+            loading="lazy"
+            decoding="async"
+            width="800"
+            height="220"
+          />
+          <div class="project-info card__body">
+            <h3 class="project-heading card__title">My Flix Angular</h3>
+            <p class="project-description card__text">
+              Angular client for myFlix with Node/Express backend and JWT auth.
+            </p>
+            <div class="btn-group card__actions">
+              <a
+                href="https://mancini-developer80.github.io/MyFlixAngular/welcome"
+                target="_blank"
+                class="btn btn-project btn--primary"
+                >View Project</a
+              >
+              <a
+                href="https://github.com/Mancini-Developer80/MyFlixAngular"
+                target="_blank"
+                class="btn btn-github btn--dark"
+                >Repository</a
+              >
+              <a href="angularmyflixcase.html" class="btn btn--secondary"
+                >Case Study</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Promontolio Blog -->
+        <div
+          class="project project-5 card card--project"
+          role="listitem"
+          data-tech="other"
+        >
+          <img
+            class="card__media"
+            src="img/promontoliohome.png"
+            alt="Promontolio App Screenshot"
+            loading="lazy"
+            decoding="async"
+            width="800"
+            height="220"
+          />
+          <div class="project-info card__body">
+            <h3 class="project-heading card__title">Promontolio Blog</h3>
+            <p class="project-description card__text">
+              Full-stack blog and admin dashboard with role-based auth and media
+              management.
+            </p>
+            <div class="btn-group card__actions">
+              <a
+                href="https://promontolio-blog-production.up.railway.app/"
+                target="_blank"
+                class="btn btn-project btn--primary"
+                >View Project</a
+              >
+              <a
+                href="https://github.com/Mancini-Developer80/promontolio-blog"
+                target="_blank"
+                class="btn btn-github btn--dark"
+                >Repository</a
+              >
+              <a href="promontoliocase.html" class="btn btn--secondary"
+                >Case Study</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-left">
+          <p>
+            © 2025 Giuseppe Mancini | Full Stack Web Developer | All rights
+            reserved.
+          </p>
+          <div class="social-list">
+            <a
+              class="social-link"
+              href="https://www.linkedin.com/in/giuseppe-mancini-developer/"
+              target="_blank"
+              aria-label="LinkedIn"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a
+              class="social-link"
+              href="https://github.com/Mancini-Developer80"
+              target="_blank"
+              aria-label="GitHub"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a
+              class="social-link"
+              href="https://twitter.com/yourusername"
+              target="_blank"
+              aria-label="X (Twitter)"
+              ><i class="fab fa-x-twitter"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

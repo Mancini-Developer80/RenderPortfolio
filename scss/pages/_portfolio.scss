@@ -3,16 +3,28 @@
   scroll-margin-top: 80px;
 }
 
-.portfolio {
+#projects {
+  scroll-margin-top: 80px;
+}
+
+.portfolio,
+.projects-section {
   padding: 4rem 2rem;
   background: linear-gradient(120deg, #e0f7fa 0%, #f8fdff 100%);
   box-shadow: 0 8px 32px rgba(57, 125, 226, 0.08);
   position: relative;
 }
 
+/* Projects page: add extra top padding so portfolio/projects content sits below navbar */
+.projects-page .portfolio,
+.projects-page .projects-section {
+  padding-top: 6rem;
+}
+
 .skills-heading,
 .case-studies-title,
-.portfolio-heading {
+.portfolio-heading,
+.projects-heading {
   color: #3c84e3;
   text-align: center;
   font-size: 2.5rem;
@@ -25,7 +37,8 @@
 
 .skills-heading:hover,
 .case-studies-title:hover,
-.portfolio-heading:hover {
+.portfolio-heading:hover,
+.projects-heading:hover {
   transform: skewX(-5deg) scale(1.05);
 }
 
@@ -100,6 +113,11 @@
   display: block;
 }
 
+/* Ensure Django card image crops from top to avoid perceived whitespace */
+.project-7 .card__media {
+  object-position: top;
+}
+
 .project-info {
   display: flex;
   flex-direction: column;
@@ -126,6 +144,11 @@
   box-shadow: 0 2px 8px rgba(96, 239, 255, 0.05);
   min-height: 120px;
   transition: background 0.3s;
+}
+
+/* Django card: remove top border to prevent visible line/gap */
+.project-7 {
+  border-top: none;
 }
 
 .project:hover .project-description {
@@ -271,7 +294,8 @@ a[aria-label="Twitter"] i {
 }
 
 @media (max-width: 992px) {
-  .portfolio {
+  .portfolio,
+  .projects-section {
     padding: 3rem 0.5rem;
     box-sizing: border-box;
     display: flex;
@@ -299,7 +323,8 @@ a[aria-label="Twitter"] i {
 }
 
 @media (max-width: 600px) {
-  .portfolio {
+  .portfolio,
+  .projects-section {
     padding: 2rem 0.2rem;
   }
 
@@ -327,10 +352,12 @@ a[aria-label="Twitter"] i {
   }
 
   /* Shrink filter buttons for mobile */
-  .portfolio-filters {
+  .portfolio-filters,
+  .projects-filters {
     gap: 0.4rem;
   }
-  .portfolio-filters .btn {
+  .portfolio-filters .btn,
+  .projects-filters .btn {
     padding: 0.5rem 0.8rem;
     font-size: 0.9rem;
     border-radius: 0.6rem;

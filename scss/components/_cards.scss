@@ -72,8 +72,8 @@
 /* Badges */
 .badge {
   position: absolute;
-  top: 0.6rem;
-  left: 0.6rem;
+  top: 0.2rem; /* tighter to the card edge to avoid perceived gap */
+  left: 0.2rem;
   padding: 0.3rem 0.6rem;
   border-radius: 9999px;
   font-size: 0.75rem;
@@ -84,6 +84,7 @@
   box-shadow: 0 2px 10px rgba(57, 125, 226, 0.18);
   pointer-events: none;
   z-index: 3;
+  margin: 0; /* ensure badge doesn't introduce layout margins */
 }
 
 // .badge--soon {
@@ -95,11 +96,13 @@
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  padding: 0; /* Ensure no internal padding that could create top gap */
 }
 
 .card--project .card__media {
   border-top-left-radius: 1.2rem;
   border-top-right-radius: 1.2rem;
+  margin: 0;
 }
 
 @media (max-width: 992px) {
@@ -114,6 +117,6 @@
   .card--project {
     width: 99vw;
     max-width: 99vw;
-    padding: 0.5rem 0.1rem;
+    padding: 0; /* Remove top padding to eliminate gap above image */
   }
 }

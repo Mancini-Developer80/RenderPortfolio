@@ -190,21 +190,21 @@ document.addEventListener("DOMContentLoaded", function () {
     if (btnInfo) observer2.observe(btnInfo);
   }
 
-  // IntersectionObserver for each project card animation (bidirectional)
+  // IntersectionObserver for each project card animation (one-time reveal to prevent pulsing)
   const projectCards = document.querySelectorAll(".projects .project");
   if (projectCards.length) {
     const projectObserver = new IntersectionObserver(
-      (entries) => {
+      (entries, observer) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
-          } else {
-            entry.target.classList.remove("visible");
+            // Unobserve after first reveal to avoid toggle flicker/pulsing
+            observer.unobserve(entry.target);
           }
         });
       },
       {
-        threshold: 0.25, // Animate when 25% visible
+        threshold: 0.15, // Trigger a bit earlier for smoother entry
       }
     );
     projectCards.forEach((card) => projectObserver.observe(card));
@@ -233,11 +233,15 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Portfolio filters: quick project subset by tech
-  const filterBar = document.querySelector(".portfolio-filters");
+  const filterBar =
+    document.querySelector(".projects-filters") ||
+    document.querySelector(".portfolio-filters");
   const filterButtons = filterBar
     ? filterBar.querySelectorAll("button[data-filter]")
     : [];
-  const projectList = document.getElementById("projects-list");
+  const projectList =
+    document.getElementById("projects-gallery") ||
+    document.getElementById("projects-list");
   const projects = projectList ? projectList.querySelectorAll(".project") : [];
   const projectsCount = document.getElementById("projects-count");
 

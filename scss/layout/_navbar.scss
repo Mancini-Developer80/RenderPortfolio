@@ -21,7 +21,8 @@
   transition: background 0.4s, box-shadow 0.4s, border-bottom 0.4s, top 0.4s;
 }
 
-.navbar.active {
+.navbar.active,
+.projects-page .navbar {
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);

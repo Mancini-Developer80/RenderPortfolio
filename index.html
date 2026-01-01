@@ -57,7 +57,7 @@
               <li><a href="index.html" aria-current="page">Home</a></li>
               <li><a href="about.html">About Me</a></li>
               <!-- <li><a href="contact.html">Contact Me</a></li> -->
-              <li><a href="#portfolio">Projects</a></li>
+              <li><a href="projects.html">Projects</a></li>
               <li><a href="blog.html" class="blog-link">Blog</a></li>
             </ul>
           </div>
@@ -75,7 +75,7 @@
               <li><a href="index.html" aria-current="page">Home</a></li>
               <li><a href="about.html">About Me</a></li>
               <!-- <li><a href="contact.html">Contact Me</a></li> -->
-              <li><a href="#portfolio">Projects</a></li>
+              <li><a href="projects.html">Projects</a></li>
               <li><a href="blog.html" class="blog-link">Blog</a></li>
             </ul>
           </div>
@@ -500,163 +500,13 @@
       </a>
     </section>
     <section class="portfolio section" id="portfolio">
-      <h2 class="portfolio-heading">My Portfolio Projects</h2>
-      <div
-        class="portfolio-filters cluster cluster--center"
-        role="toolbar"
-        aria-label="Filter projects"
-      >
-        <button
-          class="btn btn--secondary"
-          type="button"
-          data-filter="all"
-          aria-pressed="true"
-        >
-          All
-        </button>
-        <button
-          class="btn btn--secondary"
-          type="button"
-          data-filter="react"
-          aria-pressed="false"
-        >
-          React
-        </button>
-        <button
-          class="btn btn--secondary"
-          type="button"
-          data-filter="angular"
-          aria-pressed="false"
-        >
-          Angular
-        </button>
-        <button
-          class="btn btn--secondary"
-          type="button"
-          data-filter="node"
-          aria-pressed="false"
-        >
-          Node
-        </button>
-        <button
-          class="btn btn--secondary"
-          type="button"
-          data-filter="django"
-          aria-pressed="false"
-        >
-          Django
-        </button>
-        <button
-          class="btn btn--secondary"
-          type="button"
-          data-filter="bootstrap"
-          aria-pressed="false"
-        >
-          Bootstrap
-        </button>
-        <button
-          class="btn btn--secondary"
-          type="button"
-          data-filter="other"
-          aria-pressed="false"
-        >
-          Other
-        </button>
-      </div>
-      <div
-        class="projects-meta"
-        aria-live="polite"
-        aria-atomic="true"
-        style="text-align: center; margin: 0.8rem 0 0.4rem 0"
-      >
-        <span id="projects-count">Showing all projects</span>
-      </div>
+      <h2 class="portfolio-heading">Featured Projects</h2>
       <div
         class="projects projects-grid grid"
         role="list"
-        aria-label="Portfolio projects"
+        aria-label="Featured projects"
         id="projects-list"
       >
-        <div
-          class="project project-1 card card--project"
-          role="listitem"
-          data-tech="bootstrap javascript"
-        >
-          <img
-            class="card__media"
-            src="img/Pokemon_2.png"
-            alt="Pokemon App Screenshot"
-            loading="lazy"
-            decoding="async"
-            width="800"
-            height="220"
-          />
-          <div class="project-info card__body">
-            <h3 class="project-heading card__title">Pokemon App</h3>
-            <p class="project-description card__text">
-              A fully responsive web application engineered with HTML, CSS,
-              JavaScript, and Bootstrap that empowers users to seamlessly browse
-              diverse Pokémon profiles and access comprehensive details.
-            </p>
-            <div class="btn-group card__actions">
-              <a
-                href="https://mancini-developer80.github.io/PokemonAppBootstrap/"
-                target="_blank"
-                class="btn btn-project btn--primary"
-                >View Project</a
-              >
-              <a
-                href="https://github.com/Mancini-Developer80/PokemonAppBootstrap"
-                target="_blank"
-                class="btn btn-github btn--dark"
-                >Repository</a
-              >
-              <a href="pokemoncase.html" class="btn btn--secondary"
-                >Case Study</a
-              >
-            </div>
-          </div>
-        </div>
-        <div
-          class="project project-2 card card--project"
-          role="listitem"
-          data-tech="react"
-        >
-          <img
-            class="card__media"
-            src="img/MeetUp.png"
-            alt="Meet Up App Screenshot"
-            loading="lazy"
-            decoding="async"
-            width="800"
-            height="220"
-          />
-          <div class="project-info card__body">
-            <h3 class="project-heading card__title">Meet Up</h3>
-            <p class="project-description card__text">
-              A serverless, progressive web application (PWA) with React using a
-              test-driven development (TDD) technique. The application uses the
-              Google Calendar API to fetch upcoming worlwide Tech events.
-            </p>
-            <div class="btn-group card__actions">
-              <a
-                href="https://meet-app-git-main-giuseppes-projects-44470569.vercel.app/"
-                target="_blank"
-                class="btn btn-project btn--primary"
-                >View Project</a
-              >
-              <a
-                href="https://github.com/Mancini-Developer80/MeetApp"
-                target="_blank"
-                class="btn btn-github btn--dark"
-                >Repository</a
-              >
-              <a href="meetappcase.html" class="btn btn--secondary"
-                >Case Study</a
-              >
-            </div>
-          </div>
-        </div>
         <div
           class="project project-3 card card--project"
           role="listitem"
@@ -692,47 +542,6 @@
                 >Repository</a
               >
               <a href="myflixcase.html" class="btn btn--secondary"
-                >Case Study</a
-              >
-            </div>
-          </div>
-        </div>
-        <div
-          class="project project-4 card card--project"
-          role="listitem"
-          data-tech="angular"
-        >
-          <img
-            class="card__media"
-            src="img/MyFlixAngularApp.png"
-            alt="My Flix Angular Screenshot"
-            loading="lazy"
-            decoding="async"
-            width="800"
-            height="220"
-          />
-          <div class="project-info card__body">
-            <h3 class="project-heading card__title">My Flix Angular</h3>
-            <p class="project-description card__text">
-              A RESTful API built with Node.js, Express, and Angular, employing
-              an innovative modular approach. The myFlix-App API delivers movie,
-              director, and genre data while managing user profiles and
-              favorites.
-            </p>
-            <div class="btn-group card__actions">
-              <a
-                href="https://mancini-developer80.github.io/MyFlixAngular/welcome"
-                target="_blank"
-                class="btn btn-project btn--primary"
-                >View Project</a
-              >
-              <a
-                href="https://github.com/Mancini-Developer80/MyFlixAngular"
-                target="_blank"
-                class="btn btn-github btn--dark"
-                >Repository</a
-              >
-              <a href="angularmyflixcase.html" class="btn btn--secondary"
                 >Case Study</a
               >
             </div>
@@ -780,52 +589,10 @@
           </div>
         </div>
         <div
-          class="project project-5 card card--project"
-          role="listitem"
-          data-tech="other"
-        >
-          <img
-            class="card__media"
-            src="img/promontoliohome.png"
-            alt="Promontolio App Screenshot"
-            loading="lazy"
-            decoding="async"
-            width="800"
-            height="220"
-          />
-          <div class="project-info card__body">
-            <h3 class="project-heading card__title">Promontolio Blog</h3>
-            <p class="project-description card__text">
-              A modern, full-stack blog and admin dashboard for an Italian olive
-              oil business, featuring rich text editing, media management,
-              authentication, author role management system, and responsive
-              design.
-            </p>
-            <div class="btn-group card__actions">
-              <a
-                href="https://promontolio-blog-production.up.railway.app/"
-                target="_blank"
-                class="btn btn-project btn--primary"
-                >View Project</a
-              >
-              <a
-                href="https://github.com/Mancini-Developer80/promontolio-blog"
-                target="_blank"
-                class="btn btn-github btn--dark"
-                >Repository</a
-              >
-              <a href="promontoliocase.html" class="btn btn--secondary"
-                >Case Study</a
-              >
-            </div>
-          </div>
-        </div>
-        <div
           class="project project-7 card card--project"
           role="listitem"
           data-tech="django"
         >
-          <span class="badge badge--soon">Coming Soon</span>
           <img
             class="card__media"
             src="img/globalBusiness.jpg"
@@ -852,6 +619,9 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="cluster cluster--center" style="margin-top: 1rem">
+        <a href="projects.html" class="btn btn--primary">More projects here</a>
       </div>
     </section>
 

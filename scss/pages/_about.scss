@@ -772,24 +772,28 @@
 
   li {
     position: relative;
-    padding-left: 1.25rem;
+    padding-left: 0;
     font-size: 1.0625rem;
     line-height: 1.8;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
 
     &::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: #397de2;
-      font-weight: 600;
-      line-height: 1.8;
+      display: none;
     }
 
     strong {
       color: #1a2233;
       font-weight: 600;
     }
+  }
+
+  .work-approach-icon {
+    color: #397de2;
+    font-size: 1.1rem;
+    min-width: 1.4rem;
+    flex-shrink: 0;
   }
 }
 
@@ -1002,6 +1006,11 @@
     li {
       line-height: 1.7;
       font-size: 1rem;
+    }
+
+    .work-approach-icon {
+      font-size: 1rem;
+      min-width: 1.2rem;
     }
   }
 
