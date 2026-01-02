@@ -1,0 +1,41 @@
+{% load static %}
+<header class="header" id="home">
+  <nav class="navbar">
+    <div class="container flex-container">
+      <div class="logo">
+        <a href="{% url 'pages:home' %}" aria-label="Homepage">
+          <img src="{% static 'SVGdev/SVG/Risorsa 2.svg' %}" alt="Logo" />
+        </a>
+      </div>
+      <div class="main-list-items">
+        <ul>
+          <li><a href="{% url 'pages:home' %}">Home</a></li>
+          <li><a href="{% url 'pages:about' %}">About Me</a></li>
+          <li><a href="{% url 'pages:projects' %}">Projects</a></li>
+          <li>
+            <a href="{% url 'blog-index' %}" class="blog-link">Blog</a>
+          </li>
+        </ul>
+      </div>
+      <div class="mobile-list-items">
+        <button
+          class="mobile-menu-toggle"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          type="button"
+        >
+          <i class="fas fa-bars fa-2x"></i>
+        </button>
+        <ul class="mobile-menu" id="mobile-menu" aria-hidden="true">
+          <li><a href="{% url 'pages:home' %}">Home</a></li>
+          <li><a href="{% url 'pages:about' %}">About Me</a></li>
+          <li><a href="{% url 'pages:projects' %}">Projects</a></li>
+          <li>
+            <a href="{% url 'blog-index' %}" class="blog-link">Blog</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
