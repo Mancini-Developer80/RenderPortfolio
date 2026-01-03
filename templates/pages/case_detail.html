@@ -18,13 +18,14 @@
 
   <!-- Main Content Container -->
   <div class="case-container">
-    
     <!-- Overview Section -->
     <section class="case-section fade-in-scroll">
       <div class="case-card">
-        <h2 class="case-card__title">Overview</h2>
+        <h2 class="case-card__title">
+          <i class="fas fa-info-circle"></i> Overview
+        </h2>
         <div class="case-card__content">
-          <p>{{ case_study.full_description }}</p>
+          <p>{{ case_study.full_description|safe }}</p>
         </div>
       </div>
     </section>
@@ -33,7 +34,9 @@
     {% if case_study.technologies.all %}
     <section class="case-section fade-in-scroll">
       <div class="case-card">
-        <h2 class="case-card__title">Technologies</h2>
+        <h2 class="case-card__title">
+          <i class="fas fa-tools"></i> Technologies
+        </h2>
         <div class="case-card__content">
           <ul class="tech-list">
             {% for tech in case_study.technologies.all %}
@@ -49,9 +52,11 @@
     {% if case_study.purpose %}
     <section class="case-section fade-in-scroll">
       <div class="case-card">
-        <h2 class="case-card__title">Purpose & Objectives</h2>
+        <h2 class="case-card__title">
+          <i class="fas fa-bullseye"></i> Purpose & Objectives
+        </h2>
         <div class="case-card__content">
-          <p>{{ case_study.purpose|linebreaks }}</p>
+          <p>{{ case_study.purpose|safe }}</p>
         </div>
       </div>
     </section>
@@ -61,7 +66,9 @@
     {% if case_study.features %}
     <section class="case-section fade-in-scroll">
       <div class="case-card">
-        <h2 class="case-card__title">Key Features</h2>
+        <h2 class="case-card__title">
+          <i class="fas fa-star"></i> Key Features
+        </h2>
         <div class="case-card__content">
           <ul class="feature-list">
             {% for line in case_study.features.splitlines %}
@@ -79,7 +86,9 @@
     {% if case_study.architecture %}
     <section class="case-section fade-in-scroll">
       <div class="case-card">
-        <h2 class="case-card__title">Architecture & Structure</h2>
+        <h2 class="case-card__title">
+          <i class="fas fa-sitemap"></i> Architecture & Structure
+        </h2>
         <div class="case-card__content">
           <ul class="feature-list">
             {% for line in case_study.architecture.splitlines %}
@@ -97,7 +106,9 @@
     {% if case_study.technical_challenges %}
     <section class="case-section fade-in-scroll">
       <div class="case-card">
-        <h2 class="case-card__title">Technical Challenges</h2>
+        <h2 class="case-card__title">
+          <i class="fas fa-puzzle-piece"></i> Technical Challenges
+        </h2>
         <div class="case-card__content">
           <ul class="feature-list">
             {% for line in case_study.technical_challenges.splitlines %}
@@ -115,9 +126,11 @@
     {% if case_study.accomplishments %}
     <section class="case-section fade-in-scroll">
       <div class="case-card">
-        <h2 class="case-card__title">Accomplishments</h2>
+        <h2 class="case-card__title">
+          <i class="fas fa-trophy"></i> Accomplishments
+        </h2>
         <div class="case-card__content">
-          <p>{{ case_study.accomplishments|linebreaks }}</p>
+          <p>{{ case_study.accomplishments|safe }}</p>
         </div>
       </div>
     </section>
@@ -127,9 +140,11 @@
     {% if case_study.final_consideration %}
     <section class="case-section fade-in-scroll">
       <div class="case-card">
-        <h2 class="case-card__title">Lessons Learned</h2>
+        <h2 class="case-card__title">
+          <i class="fas fa-lightbulb"></i> Lessons Learned
+        </h2>
         <div class="case-card__content">
-          <p>{{ case_study.final_consideration|linebreaks }}</p>
+          <p>{{ case_study.final_consideration|safe }}</p>
         </div>
       </div>
     </section>
@@ -139,12 +154,21 @@
     <section class="case-section case-actions fade-in-scroll">
       <div class="case-links">
         {% if case_study.live_url %}
-        <a href="{{ case_study.live_url }}" class="btn btn--primary" target="_blank" rel="noopener">
+        <a
+          href="{{ case_study.live_url }}"
+          class="btn btn--primary"
+          target="_blank"
+          rel="noopener"
+        >
           <i class="fas fa-external-link-alt"></i> View Live Site
         </a>
-        {% endif %}
-        {% if case_study.github_url %}
-        <a href="{{ case_study.github_url }}" class="btn btn--secondary" target="_blank" rel="noopener">
+        {% endif %} {% if case_study.github_url %}
+        <a
+          href="{{ case_study.github_url }}"
+          class="btn btn--secondary"
+          target="_blank"
+          rel="noopener"
+        >
           <i class="fab fa-github"></i> View on GitHub
         </a>
         {% endif %}
@@ -153,26 +177,25 @@
         <i class="fas fa-arrow-left"></i> Back to Projects
       </a>
     </section>
-
   </div>
 </main>
 
 <script>
-// Intersection Observer for fade-in animations
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
-};
+  // Intersection Observer for fade-in animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px",
+  };
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, observerOptions);
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, observerOptions);
 
-const fadeElements = document.querySelectorAll('.fade-in-scroll');
-fadeElements.forEach(el => observer.observe(el));
+  const fadeElements = document.querySelectorAll(".fade-in-scroll");
+  fadeElements.forEach((el) => observer.observe(el));
 </script>
 {% endblock %}

@@ -22,7 +22,8 @@
 }
 
 .navbar.active,
-.projects-page .navbar {
+.projects-page .navbar,
+.case-studies-single .navbar {
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);

@@ -166,7 +166,8 @@ body {
 }
 
 .navbar.active,
-.projects-page .navbar {
+.projects-page .navbar,
+.case-studies-single .navbar {
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -1020,6 +1021,10 @@ body {
   grid-template-columns: repeat(5, 1fr);
 }
 
+.grid--cols-8 {
+  grid-template-columns: repeat(8, 1fr);
+}
+
 .grid--gap-sm {
   gap: 0.8rem;
 }
@@ -1030,15 +1035,26 @@ body {
 
 @media (max-width: 992px) {
   .grid--cols-4,
-  .grid--cols-5 {
-    grid-template-columns: repeat(2, 1fr);
+  .grid--cols-5,
+  .grid--cols-8 {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 @media (max-width: 768px) {
   .grid--cols-2,
   .grid--cols-3,
   .grid--cols-4,
-  .grid--cols-5 {
+  .grid--cols-5,
+  .grid--cols-8 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .grid--cols-2,
+  .grid--cols-3,
+  .grid--cols-4,
+  .grid--cols-5,
+  .grid--cols-8 {
     grid-template-columns: 1fr;
   }
 }
@@ -3276,7 +3292,7 @@ a[aria-label=Twitter] i {
 
 /* Section Spacing */
 .case-section {
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
 }
 
 /* Card Styles */
@@ -3298,10 +3314,18 @@ a[aria-label=Twitter] i {
 .case-card__title {
   font-size: 2rem;
   color: var(--primary-color);
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   font-weight: 600;
   position: relative;
   padding-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.case-card__title i {
+  font-size: 1.8rem;
+  color: var(--secondary-color);
 }
 
 .case-card__title::after {
@@ -3322,12 +3346,18 @@ a[aria-label=Twitter] i {
 
 .case-card__content p {
   font-size: 1.1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   color: #333;
+  line-height: 1.9;
 }
 
 .case-card__content p:last-child {
   margin-bottom: 0;
+}
+
+.case-card__content strong {
+  color: var(--primary-color);
+  font-weight: 600;
 }
 
 /* Technology Badges */
@@ -3363,11 +3393,16 @@ a[aria-label=Twitter] i {
 
 .feature-list li {
   font-size: 1.05rem;
-  padding: 0.8rem 0 0.8rem 2rem;
+  padding: 1rem 0 1rem 2.5rem;
   position: relative;
-  line-height: 1.6;
+  line-height: 1.7;
   color: #333;
   border-bottom: 1px solid rgba(96, 239, 255, 0.1);
+  transition: padding-left 0.2s;
+}
+
+.feature-list li:hover {
+  padding-left: 2.8rem;
 }
 
 .feature-list li:last-child {
@@ -3378,6 +3413,7 @@ a[aria-label=Twitter] i {
   content: "✓";
   position: absolute;
   left: 0;
+  top: 0.9rem;
   color: var(--secondary-color);
   font-weight: bold;
   font-size: 1.2rem;
