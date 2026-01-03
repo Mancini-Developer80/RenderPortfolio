@@ -1,7 +1,264 @@
-/* Case detail and single study layouts */
-.case-studies.case-studies-single {
-  min-height: unset;
-  height: auto;
+/* ====================================
+   CASE STUDY DETAIL PAGE
+   ==================================== */
+
+/* Base Styles */
+.case-studies-single {
+  min-height: 100vh;
+  background-color: var(--background-color);
+}
+
+.case-content {
+  width: 100%;
+  padding-top: 85px; /* Account for navbar */
+}
+
+/* Hero Section */
+.case-hero {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 3rem;
+}
+
+.case-hero__content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.case-hero__title {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.case-hero__description {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+/* Main Container */
+.case-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
+}
+
+/* Section Spacing */
+.case-section {
+  margin-bottom: 2.5rem;
+}
+
+/* Card Styles */
+.case-card {
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 1rem;
+  padding: 2.5rem;
+  box-shadow: 0 4px 20px rgba(57, 125, 226, 0.1);
+  border: 1px solid rgba(96, 239, 255, 0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+  color: #333;
+}
+
+.case-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(57, 125, 226, 0.15);
+}
+
+.case-card__title {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+.case-card__title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--secondary-color),
+    var(--primary-color)
+  );
+  border-radius: 2px;
+}
+
+.case-card__content {
+  color: #333;
+  line-height: 1.8;
+}
+
+.case-card__content p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.case-card__content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Technology Badges */
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  list-style: none;
+  padding: 0;
+}
+
+.tech-badge {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 2rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(57, 125, 226, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tech-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(57, 125, 226, 0.3);
+}
+
+/* Feature Lists */
+.feature-list {
+  list-style: none;
+  padding: 0;
+}
+
+.feature-list li {
+  font-size: 1.05rem;
+  padding: 0.8rem 0 0.8rem 2rem;
+  position: relative;
+  line-height: 1.6;
+  color: #333;
+  border-bottom: 1px solid rgba(96, 239, 255, 0.1);
+}
+
+.feature-list li:last-child {
+  border-bottom: none;
+}
+
+.feature-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--secondary-color);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Action Links */
+.case-actions {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 2px solid rgba(96, 239, 255, 0.2);
+}
+
+.case-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.fade-in-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .case-hero {
+    padding: 3rem 1.5rem;
+  }
+
+  .case-hero__title {
+    font-size: 2.2rem;
+  }
+
+  .case-hero__description {
+    font-size: 1.1rem;
+  }
+
+  .case-container {
+    padding: 0 1rem 3rem;
+  }
+
+  .case-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .case-card__title {
+    font-size: 1.6rem;
+  }
+
+  .case-links {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .case-links .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .case-hero__title {
+    font-size: 1.8rem;
+  }
+
+  .case-card {
+    padding: 1.5rem;
+  }
+
+  .tech-badge {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
 }
 
 .container-single-case {

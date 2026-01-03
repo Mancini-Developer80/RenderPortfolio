@@ -8,6 +8,8 @@ urlpatterns = [
     path('projects/', views.projects, name='projects'),
     path('about/', views.about, name='about'),
     path('contact/', views.contact, name='contact'),
+    # Dynamic case study detail page
+    path('case/<slug:slug>/', views.case_study_detail, name='case-detail'),
     # Case study pages
     path('cases/angular-myflix/', views.angular_myflix_case, name='angular-myflix-case'),
     path('cases/meet-app/', views.meetapp_case, name='meetapp-case'),

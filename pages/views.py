@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from .models import CaseStudy
 
 def home(request):
 	return render(request, 'pages/home.html')
@@ -11,6 +12,10 @@ def about(request):
 
 def contact(request):
 	return render(request, 'pages/contact.html')
+
+def case_study_detail(request, slug):
+	case_study = get_object_or_404(CaseStudy, slug=slug)
+	return render(request, 'pages/case_detail.html', {'case_study': case_study})
 
 def angular_myflix_case(request):
 	return render(request, 'pages/cases/angular-myflix.html')
