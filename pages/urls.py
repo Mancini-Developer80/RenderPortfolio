@@ -10,11 +10,4 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     # Dynamic case study detail page
     path('case/<slug:slug>/', views.case_study_detail, name='case-detail'),
-    # Case study pages
-    path('cases/angular-myflix/', views.angular_myflix_case, name='angular-myflix-case'),
-    path('cases/meet-app/', views.meetapp_case, name='meetapp-case'),
-    path('cases/pokemon/', views.pokemon_case, name='pokemon-case'),
-    path('cases/promontolio/', views.promontolio_case, name='promontolio-case'),
-    path('cases/myflix/', views.myflix_case, name='myflix-case'),
-    path('cases/job-tracker/', views.jobtracker_case, name='jobtracker-case'),
 ]

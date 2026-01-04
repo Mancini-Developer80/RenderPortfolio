@@ -1,0 +1,8 @@
+# Django templates - Prettier breaks Django template syntax
+templates/**/*.html
+
+# Compiled CSS
+css/
+
+# Python files
+*.py

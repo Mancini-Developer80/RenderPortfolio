@@ -14,9 +14,9 @@
   padding: 2rem 3rem;
   position: fixed;
   top: 2rem;
-  left: 1rem;
-  right: 1rem;
-  width: calc(100% - 2rem);
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 100;
   transition: background 0.4s, box-shadow 0.4s, border-bottom 0.4s, top 0.4s;
 }
@@ -30,9 +30,9 @@
   box-shadow: 0 4px 24px rgba(57, 125, 226, 0.15), 0 2px 0 #60efff;
   border-bottom: 2px solid #60efff;
   top: 0;
-  left: 1rem;
-  right: 1rem;
-  width: calc(100% - 2rem);
+  left: 0;
+  right: 0;
+  width: 100%;
 }
 
 .navbar ul {
@@ -263,6 +263,14 @@
     width: 100vw;
     margin: 0;
     padding: 0;
+  }
+
+  .navbar,
+  .navbar.active {
+    left: 0;
+    right: 0;
+    width: 100%;
+    top: 0;
   }
 
   .main-list-items {

@@ -6,10 +6,10 @@
 {% block content %}
 <section class="about-section">
   <div class="about-section-container about-section-container-version">
-    <h3 class="about-section-title">About Me</h3>
+    <h3 class="about-section-title fade-in-scroll">About Me</h3>
 
     <div class="about-intro-content">
-      <p class="intro-item">
+      <p class="intro-item fade-in-scroll">
         <span class="intro-icon" aria-hidden="true">
           <i class="fas fa-code"></i>
         </span>
@@ -25,7 +25,7 @@
         </span>
       </p>
 
-      <p class="intro-item">
+      <p class="intro-item fade-in-scroll">
         <span class="intro-icon" aria-hidden="true">
           <i class="fas fa-lightbulb"></i>
         </span>
@@ -35,7 +35,7 @@
         </span>
       </p>
 
-      <p class="intro-item">
+      <p class="intro-item fade-in-scroll">
         <span class="intro-icon" aria-hidden="true">
           <i class="fab fa-python"></i>
         </span>
@@ -49,7 +49,7 @@
     </div>
 
     <div class="stack stack--lg" aria-label="Additional About Sections">
-      <section class="section section--tight" aria-labelledby="what-i-do">
+      <section class="section section--tight fade-in-scroll" aria-labelledby="what-i-do">
         <h3 id="what-i-do" class="about-section-title">What I Do</h3>
         <div class="about-section-content stack stack--md">
           <p>
@@ -59,7 +59,7 @@
           </p>
 
           <div class="tech-grid">
-            <div class="tech-category tech-category--frontend">
+            <div class="tech-category tech-category--frontend fade-in-scroll">
               <h4 class="tech-category-title">Frontend</h4>
               <div class="tech-items">
                 <span class="tech-item tech-item--primary">React</span>
@@ -69,7 +69,7 @@
               </div>
             </div>
 
-            <div class="tech-category tech-category--backend">
+            <div class="tech-category tech-category--backend fade-in-scroll">
               <h4 class="tech-category-title">Backend</h4>
               <div class="tech-items">
                 <span class="tech-item tech-item--primary">Node.js</span>
@@ -79,7 +79,7 @@
               </div>
             </div>
 
-            <div class="tech-category tech-category--data">
+            <div class="tech-category tech-category--data fade-in-scroll">
               <h4 class="tech-category-title">Data & APIs</h4>
               <div class="tech-items">
                 <span class="tech-item">MongoDB</span>
@@ -89,7 +89,7 @@
               </div>
             </div>
 
-            <div class="tech-category tech-category--tools">
+            <div class="tech-category tech-category--tools fade-in-scroll">
               <h4 class="tech-category-title">Tools</h4>
               <div class="tech-items">
                 <span class="tech-item tech-item--primary">Git</span>
@@ -102,7 +102,7 @@
         </div>
       </section>
 
-      <section class="section section--tight" aria-labelledby="how-i-work">
+      <section class="section section--tight fade-in-scroll" aria-labelledby="how-i-work">
         <h3 id="how-i-work" class="about-section-title">How I Work</h3>
         <div class="about-section-content stack stack--sm">
           <p>
@@ -141,14 +141,14 @@
       </section>
 
       <section
-        class="section section--tight"
+        class="section section--tight fade-in-scroll"
         aria-labelledby="selected-projects"
       >
         <h3 id="selected-projects" class="about-section-title">
           Selected Projects
         </h3>
         <div class="about-section-content stack stack--md">
-          <div class="project-card stack stack--sm">
+          <div class="project-card stack stack--sm fade-in-scroll">
             <p><strong>Full‑Stack MERN Applications</strong></p>
             <p>
               I’ve developed multiple full‑stack applications using React,
@@ -178,7 +178,7 @@
               experiences across devices.
             </p>
           </div>
-          <div class="project-card stack stack--sm">
+          <div class="project-card stack stack--sm fade-in-scroll">
             <p>
               <strong
                 ><i class="fab fa-python" style="color: #3776ab"></i> Python &
@@ -221,12 +221,12 @@
       </section>
 
       <section
-        class="section section--tight about-beyond"
+        class="section section--tight about-beyond fade-in-scroll"
         aria-labelledby="beyond-code"
       >
         <h3 id="beyond-code" class="about-section-title">Beyond Code</h3>
         <div class="about-beyond-grid">
-          <div class="beyond-item">
+          <div class="beyond-item fade-in-scroll">
             <div class="beyond-header">
               <span class="beyond-icon" aria-hidden="true">
                 <i class="fas fa-language"></i>
@@ -258,7 +258,7 @@
             </p>
           </div>
 
-          <div class="beyond-item">
+          <div class="beyond-item fade-in-scroll">
             <div class="beyond-header">
               <span class="beyond-icon" aria-hidden="true">
                 <i class="fas fa-lightbulb"></i>
@@ -272,7 +272,7 @@
             </p>
           </div>
 
-          <div class="beyond-item">
+          <div class="beyond-item fade-in-scroll">
             <div class="beyond-header">
               <span class="beyond-icon" aria-hidden="true">
                 <i class="fas fa-robot"></i>
@@ -289,7 +289,7 @@
       </section>
 
       <section
-        class="section section--tight"
+        class="section section--tight fade-in-scroll"
         aria-labelledby="what-im-looking-for"
       >
         <h3 id="what-im-looking-for" class="about-section-title">
@@ -330,7 +330,7 @@
         </div>
       </section>
 
-      <section class="section section--tight" aria-labelledby="lets-connect">
+      <section class="section section--tight fade-in-scroll" aria-labelledby="lets-connect">
         <h3 id="lets-connect" class="about-section-title">Let’s Connect</h3>
         <div class="about-section-content stack stack--sm">
           <p>
@@ -365,4 +365,27 @@
     </div>
   </div>
 </section>
+
+<script>
+  // Intersection Observer for scroll animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, index * 100);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.fade-in-scroll').forEach((el) => {
+    observer.observe(el);
+  });
+</script>
 {% endblock %}

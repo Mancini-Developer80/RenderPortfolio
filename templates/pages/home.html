@@ -97,6 +97,15 @@
   <section class="skills-icons section section--tight" id="skills">
     <div class="container">
       <h2 class="skills-heading">Skills</h2>
+      <p class="skills-description">
+        I specialize in building full-stack web applications using modern
+        technologies like React, Node.js, Express, MongoDB, and Django. My skill
+        set spans both front-end and back-end development, with a strong focus on
+        clean architecture, responsive design, and performance optimization. From
+        crafting intuitive UIs with HTML5, CSS3, and JavaScript to engineering
+        scalable APIs in Python and JavaScript, I deliver secure, maintainable,
+        and user-centric digital solutions.
+      </p>
       <ul class="skills-grid grid grid--cols-8 grid--gap-sm">
         <li class="skill-icon flex-skill">
           <img
@@ -303,7 +312,7 @@
               class="btn btn-github btn--dark"
               >Repository</a
             >
-            <a href="{% url 'pages:myflix-case' %}" class="btn btn--secondary"
+            <a href="{% url 'pages:case-detail' slug='myflix-react' %}" class="btn btn--secondary"
               >Case Study</a
             >
           </div>
@@ -342,7 +351,7 @@
               >Repository</a
             >
             <a
-              href="{% url 'pages:jobtracker-case' %}"
+              href="{% url 'pages:case-detail' slug='job-tracker' %}"
               class="btn btn--secondary"
               >Case Study</a
             >
@@ -378,7 +387,7 @@
               >Repository</a
             >
             <a
-              href="{% url 'pages:promontolio-case' %}"
+              href="{% url 'pages:case-detail' slug='promontolio-blog-cms' %}"
               class="btn btn--secondary"
               >Case Study</a
             >

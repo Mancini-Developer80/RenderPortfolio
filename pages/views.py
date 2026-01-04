@@ -16,21 +16,3 @@ def contact(request):
 def case_study_detail(request, slug):
 	case_study = get_object_or_404(CaseStudy, slug=slug)
 	return render(request, 'pages/case_detail.html', {'case_study': case_study})
-
-def angular_myflix_case(request):
-	return render(request, 'pages/cases/angular-myflix.html')
-
-def meetapp_case(request):
-	return render(request, 'pages/cases/meetapp.html')
-
-def pokemon_case(request):
-	return render(request, 'pages/cases/pokemon.html')
-
-def promontolio_case(request):
-	return render(request, 'pages/cases/promontolio.html')
-
-def myflix_case(request):
-	return render(request, 'pages/cases/myflix.html')
-
-def jobtracker_case(request):
-	return render(request, 'pages/cases/jobtracker.html')
