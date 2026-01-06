@@ -2,6 +2,8 @@
 $primary-color: #397de2;
 $secondary-color: #60efff;
 $text-color: #fff;
+$text-dark: #333;
+$text-light: #666;
 $background-color: #ffffff;
 $box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.35);
 
@@ -18,6 +20,9 @@ $breakpoints: (
   --primary-color: #{$primary-color};
   --secondary-color: #{$secondary-color};
   --text-color: #{$text-color};
+  --text-dark: #{$text-dark};
+  --text-light: #{$text-light};
+  --white: #fff;
   --background-color: #{$background-color};
   --box-shadow: #{$box-shadow};
 }

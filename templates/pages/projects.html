@@ -82,283 +82,57 @@
     aria-label="Projects"
     id="projects-gallery"
   >
-    <!-- My Flix -->
+    {% for case_study in case_studies %}
+    <!-- {{ case_study.title }} -->
     <div
-      class="project project-3 card card--project"
+      class="project card card--project"
       role="listitem"
-      data-tech="react node"
+      data-tech="{{ case_study.get_tech_classes }}"
     >
+      {% if case_study.image %}
       <img
         class="card__media"
-        src="{% static 'myFlix.png' %}"
-        alt="My Flix React Screenshot"
+        src="{{ case_study.image.url }}"
+        alt="{{ case_study.title }} Screenshot"
         loading="lazy"
         decoding="async"
         width="800"
         height="220"
       />
+      {% endif %}
       <div class="project-info card__body">
-        <h3 class="project-heading card__title">My Flix</h3>
+        <h3 class="project-heading card__title">{{ case_study.title }}</h3>
         <p class="project-description card__text">
-          A RESTful API built with Node.js and Express using an innovative
-          modular approach.
+          {{ case_study.short_description }}
         </p>
         <div class="btn-group card__actions">
+          {% if case_study.live_url %}
           <a
-            href="https://lively-genie-620dd9.netlify.app/"
+            href="{{ case_study.live_url }}"
             target="_blank"
             class="btn btn-project btn--primary"
             >View Project</a
           >
+          {% endif %}
+          {% if case_study.github_url %}
           <a
-            href="https://github.com/Mancini-Developer80/myFlix-client"
+            href="{{ case_study.github_url }}"
             target="_blank"
             class="btn btn-github btn--dark"
             >Repository</a
           >
+          {% endif %}
           <a
-            href="{% url 'pages:case-detail' slug='myflix-react' %}"
+            href="{% url 'pages:case-detail' slug=case_study.slug %}"
             class="btn btn--secondary"
             >Case Study</a
           >
         </div>
       </div>
     </div>
-    <!-- Job Tracker -->
-    <div
-      class="project project-6 card card--project"
-      role="listitem"
-      data-tech="react typescript node"
-    >
-      <img
-        class="card__media"
-        src="{% static 'chartDashboard.png' %}"
-        alt="Job Tracker App Screenshot"
-        loading="lazy"
-        decoding="async"
-        width="800"
-        height="220"
-      />
-      <div class="project-info card__body">
-        <h3 class="project-heading card__title">Job Tracker</h3>
-        <p class="project-description card__text">
-          Full-stack job tracker with auth, analytics, and dark mode.
-        </p>
-        <div class="btn-group card__actions">
-          <a
-            href="https://jobtrackerapp80.netlify.app/"
-            target="_blank"
-            class="btn btn-project btn--primary"
-            >View Project</a
-          >
-          <a
-            href="https://github.com/Mancini-Developer80/Job-Tracker"
-            target="_blank"
-            class="btn btn-github btn--dark"
-            >Repository</a
-          >
-          <a
-            href="{% url 'pages:case-detail' slug='job-tracker' %}"
-            class="btn btn--secondary"
-            >Case Study</a
-          >
-        </div>
-      </div>
-    </div>
-    <!-- Portfolio Website -->
-    <div
-      class="project project-7 card card--project"
-      role="listitem"
-      data-tech="django python bootstrap"
-    >
-      <img
-        class="card__media"
-        src="{% static 'PortfolioHero.png' %}"
-        alt="Portfolio Website Screenshot"
-        loading="lazy"
-        decoding="async"
-        width="800"
-        height="220"
-      />
-      <div class="project-info card__body">
-        <h3 class="project-heading card__title">Portfolio Website</h3>
-        <p class="project-description card__text">
-          Modern portfolio built with Django, featuring dynamic content, blog
-          integration, and responsive design.
-        </p>
-        <div class="btn-group card__actions">
-          <a href="/" class="btn btn-project btn--primary">View Project</a>
-          <a
-            href="https://github.com/Mancini-Developer80/MainPortfolio"
-            target="_blank"
-            class="btn btn-github btn--dark"
-            >Repository</a
-          >
-        </div>
-      </div>
-    </div>
-    <!-- Pokemon App -->
-    <div
-      class="project project-1 card card--project"
-      role="listitem"
-      data-tech="bootstrap javascript"
-    >
-      <img
-        class="card__media"
-        src="{% static 'Pokemon_2.png' %}"
-        alt="Pokemon App Screenshot"
-        loading="lazy"
-        decoding="async"
-        width="800"
-        height="220"
-      />
-      <div class="project-info card__body">
-        <h3 class="project-heading card__title">Pokemon App</h3>
-        <p class="project-description card__text">
-          A responsive web application built with HTML, CSS, JavaScript, and
-          Bootstrap to browse Pokémon profiles.
-        </p>
-        <div class="btn-group card__actions">
-          <a
-            href="https://mancini-developer80.github.io/PokemonAppBootstrap/"
-            target="_blank"
-            class="btn btn-project btn--primary"
-            >View Project</a
-          >
-          <a
-            href="https://github.com/Mancini-Developer80/PokemonAppBootstrap"
-            target="_blank"
-            class="btn btn-github btn--dark"
-            >Repository</a
-          >
-          <a
-            href="{% url 'pages:case-detail' slug='pokemon-app' %}"
-            class="btn btn--secondary"
-            >Case Study</a
-          >
-        </div>
-      </div>
-    </div>
-    <!-- Meet Up -->
-    <div
-      class="project project-2 card card--project"
-      role="listitem"
-      data-tech="react"
-    >
-      <img
-        class="card__media"
-        src="{% static 'MeetUp.png' %}"
-        alt="Meet Up App Screenshot"
-        loading="lazy"
-        decoding="async"
-        width="800"
-        height="220"
-      />
-      <div class="project-info card__body">
-        <h3 class="project-heading card__title">Meet Up</h3>
-        <p class="project-description card__text">
-          A serverless PWA using React and Google Calendar API with TDD.
-        </p>
-        <div class="btn-group card__actions">
-          <a
-            href="https://meet-app-git-main-giuseppes-projects-44470569.vercel.app/"
-            target="_blank"
-            class="btn btn-project btn--primary"
-            >View Project</a
-          >
-          <a
-            href="https://github.com/Mancini-Developer80/MeetApp"
-            target="_blank"
-            class="btn btn-github btn--dark"
-            >Repository</a
-          >
-          <a
-            href="{% url 'pages:case-detail' slug='meet-app' %}"
-            class="btn btn--secondary"
-            >Case Study</a
-          >
-        </div>
-      </div>
-    </div>
-    <!-- My Flix Angular -->
-    <div class="project project-4 card card--project" data-tech="angular">
-      <img
-        class="card__media"
-        src="{% static 'MyFlixAngularApp.png' %}"
-        alt="My Flix Angular Screenshot"
-        loading="lazy"
-        decoding="async"
-        width="800"
-        height="220"
-      />
-      <div class="project-info card__body">
-        <h3 class="project-heading card__title">My Flix Angular</h3>
-        <p class="project-description card__text">
-          Angular client for myFlix with Node/Express backend and JWT auth.
-        </p>
-        <div class="btn-group card__actions">
-          <a
-            href="https://mancini-developer80.github.io/MyFlixAngular/welcome"
-            target="_blank"
-            class="btn btn-project btn--primary"
-            >View Project</a
-          >
-          <a
-            href="https://github.com/Mancini-Developer80/MyFlixAngular"
-            target="_blank"
-            class="btn btn-github btn--dark"
-            >Repository</a
-          >
-          <a
-            href="{% url 'pages:case-detail' slug='my-flix-angular' %}"
-            class="btn btn--secondary"
-            >Case Study</a
-          >
-        </div>
-      </div>
-    </div>
-    <!-- Promontolio Blog -->
-    <div
-      class="project project-5 card card--project"
-      role="listitem"
-      data-tech="other"
-    >
-      <img
-        class="card__media"
-        src="{% static 'promontoliohome.png' %}"
-        alt="Promontolio App Screenshot"
-        loading="lazy"
-        decoding="async"
-        width="800"
-        height="220"
-      />
-      <div class="project-info card__body">
-        <h3 class="project-heading card__title">Promontolio Blog</h3>
-        <p class="project-description card__text">
-          Full-stack blog and admin dashboard with role-based auth and media
-          management.
-        </p>
-        <div class="btn-group card__actions">
-          <a
-            href="https://promontolio-blog-production.up.railway.app/"
-            target="_blank"
-            class="btn btn-project btn--primary"
-            >View Project</a
-          >
-          <a
-            href="https://github.com/Mancini-Developer80/promontolio-blog"
-            target="_blank"
-            class="btn btn-github btn--dark"
-            >Repository</a
-          >
-          <a
-            href="{% url 'pages:case-detail' slug='promontolio-blog-cms' %}"
-            class="btn btn--secondary"
-            >Case Study</a
-          >
-        </div>
-      </div>
-    </div>
+    {% empty %}
+    <p style="text-align: center; padding: 2rem;">No projects available yet.</p>
+    {% endfor %}
   </div>
 </section>
 

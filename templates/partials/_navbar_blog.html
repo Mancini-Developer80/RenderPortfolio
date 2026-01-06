@@ -1,0 +1,66 @@
+{% load static %}
+<header class="blog-header" id="home">
+  <nav class="blog-navbar">
+    <div class="container blog-nav-container">
+      <div class="blog-logo">
+        <a href="{% url 'pages:home' %}" aria-label="Homepage">
+          <img src="{% static 'SVGdev/SVG/Risorsa 2.svg' %}" alt="Logo" />
+        </a>
+      </div>
+      <div class="blog-nav-items">
+        <ul>
+          <li><a href="{% url 'pages:home' %}">Home</a></li>
+          <li><a href="{% url 'pages:about' %}">About</a></li>
+          <li><a href="{% url 'pages:projects' %}">Projects</a></li>
+          <li><a href="{% url 'blog:home' %}" class="active">Blog</a></li>
+        </ul>
+      </div>
+      <div class="blog-mobile-menu">
+        <button
+          class="blog-mobile-toggle"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="blog-mobile-nav"
+          type="button"
+        >
+          <i class="fas fa-bars fa-2x"></i>
+        </button>
+        <ul class="blog-mobile-nav" id="blog-mobile-nav" aria-hidden="true">
+          <li><a href="{% url 'pages:home' %}">Home</a></li>
+          <li><a href="{% url 'pages:about' %}">About</a></li>
+          <li><a href="{% url 'pages:projects' %}">Projects</a></li>
+          <li><a href="{% url 'blog:home' %}" class="active">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  // Blog mobile menu toggle
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggle = document.querySelector('.blog-mobile-toggle');
+    const mobileMenu = document.querySelector('.blog-mobile-menu');
+    
+    if (toggle && mobileMenu) {
+      toggle.addEventListener('click', function() {
+        mobileMenu.classList.toggle('open');
+        const isOpen = mobileMenu.classList.contains('open');
+        toggle.setAttribute('aria-expanded', isOpen);
+        document.querySelector('.blog-mobile-nav').setAttribute('aria-hidden', !isOpen);
+      });
+    }
+
+    // Navbar scroll effect
+    const navbar = document.querySelector('.blog-navbar');
+    if (navbar) {
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+    }
+  });
+</script>

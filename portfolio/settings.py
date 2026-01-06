@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ckeditor',
     'blog',
     'pages',
 ]
@@ -138,3 +139,40 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# CKEditor Configuration
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline', 'Strike'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent'],
+            ['Link', 'Unlink', 'Image'],
+            ['Format', 'FontSize'],
+            ['TextColor', 'BGColor'],
+            ['CodeSnippet'],
+            ['RemoveFormat', 'Source']
+        ],
+        'height': 400,
+        'width': '100%',
+        'extraPlugins': ','.join(['codesnippet']),
+    }
+}
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+# Email Configuration
+# For development, emails will be printed to console
+# For production, configure these with your email provider settings
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # Development only
+
+# Production email settings (uncomment and configure for deployment):
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'  # or your email provider
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'your-email@gmail.com'
+# EMAIL_HOST_PASSWORD = 'your-app-password'
+
+# Email addresses
+DEFAULT_FROM_EMAIL = 'noreply@giuseppemancini.com'  # Sender for auto-reply emails
+CONTACT_EMAIL = 'giuseppe@example.com'  # Admin email to receive contact form notifications

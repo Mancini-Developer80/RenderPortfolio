@@ -60,3 +60,28 @@ class CaseStudy(models.Model):
     def get_tech_classes(self):
         """Return space-separated list of technology slugs for filtering"""
         return ' '.join([tech.slug for tech in self.technologies.all()])
+
+
+class ContactSubmission(models.Model):
+    """Model for storing contact form submissions"""
+    STATUS_CHOICES = [
+        ('unread', 'Unread'),
+        ('read', 'Read'),
+        ('responded', 'Responded'),
+    ]
+    
+    subject = models.CharField(max_length=200)
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    message = models.TextField()
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='unread')
+    submitted_at = models.DateTimeField(auto_now_add=True)
+    notes = models.TextField(blank=True, help_text="Admin notes about this submission")
+    
+    class Meta:
+        ordering = ['-submitted_at']
+        verbose_name = "Contact Submission"
+        verbose_name_plural = "Contact Submissions"
+    
+    def __str__(self):
+        return f"{self.name} - {self.subject} ({self.submitted_at.strftime('%Y-%m-%d')})"

@@ -4,6 +4,22 @@
 {% block title %}Giuseppe Mancini | Full Stack Web Developer{% endblock %}
 {% block body_class %}{% endblock %}
 {% block content %}
+
+<!-- Django Messages -->
+{% if messages %}
+<div class="messages-container">
+  {% for message in messages %}
+  <div class="alert alert-{{ message.tags }}" data-auto-dismiss="true">
+    <i class="fas fa-{% if message.tags == 'success' %}check-circle{% elif message.tags == 'error' %}exclamation-circle{% else %}info-circle{% endif %}"></i>
+    <span>{{ message }}</span>
+    <button class="alert-close" onclick="this.parentElement.remove()" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+
 <main>
   <section class="hero">
     <div class="container">
@@ -16,7 +32,7 @@
             Main</span
           >
         </h1>
-        <a class="btn btn-contact btn--primary" href="#contact">Contact Me</a>
+        <a class="btn btn-contact btn--primary" href="#contact">Hire me</a>
         <div class="social-list">
           <a
             href="https://github.com/Mancini-Developer80"
@@ -89,7 +105,7 @@
     </div>
     <div class="btn-info">
       <a class="btn btn-moreInfo btn--primary" href="{% url 'pages:about' %}"
-        >Discover my journey</a
+        >What I Bring to a Team</a
       >
     </div>
   </section>
@@ -279,121 +295,56 @@
       aria-label="Featured projects"
       id="projects-list"
     >
+      {% for case_study in case_studies %}
       <div
-        class="project project-3 card card--project"
+        class="project card card--project"
         role="listitem"
-        data-tech="react"
+        data-tech="{{ case_study.get_tech_classes }}"
       >
+        {% if case_study.image %}
         <img
           class="card__media"
-          src="{% static 'myFlix.png' %}"
-          alt="My Flix React Screenshot"
+          src="{{ case_study.image.url }}"
+          alt="{{ case_study.title }} Screenshot"
           loading="lazy"
           decoding="async"
           width="800"
           height="220"
         />
+        {% endif %}
         <div class="project-info card__body">
-          <h3 class="project-heading card__title">My Flix</h3>
+          <h3 class="project-heading card__title">{{ case_study.title }}</h3>
           <p class="project-description card__text">
-            A RESTful API built with Node.js and Express using an innovative
-            modular approach.
+            {{ case_study.short_description }}
           </p>
           <div class="btn-group card__actions">
+            {% if case_study.live_url %}
             <a
-              href="https://lively-genie-620dd9.netlify.app/"
+              href="{{ case_study.live_url }}"
               target="_blank"
               class="btn btn-project btn--primary"
               >View Project</a
             >
+            {% endif %}
+            {% if case_study.github_url %}
             <a
-              href="https://github.com/Mancini-Developer80/myFlix-client"
+              href="{{ case_study.github_url }}"
               target="_blank"
               class="btn btn-github btn--dark"
               >Repository</a
             >
-            <a href="{% url 'pages:case-detail' slug='myflix-react' %}" class="btn btn--secondary"
-              >Case Study</a
-            >
-          </div>
-        </div>
-      </div>
-      <div
-        class="project project-6 card card--project"
-        role="listitem"
-        data-tech="react typescript node"
-      >
-        <img
-          class="card__media"
-          src="{% static 'chartDashboard.png' %}"
-          alt="Job Tracker App Screenshot"
-          loading="lazy"
-          decoding="async"
-          width="800"
-          height="220"
-        />
-        <div class="project-info card__body">
-          <h3 class="project-heading card__title">Job Tracker</h3>
-          <p class="project-description card__text">
-            Full-stack job tracker with auth, analytics, and dark mode.
-          </p>
-          <div class="btn-group card__actions">
+            {% endif %}
             <a
-              href="https://jobtrackerapp80.netlify.app/"
-              target="_blank"
-              class="btn btn-project btn--primary"
-              >View Project</a
-            >
-            <a
-              href="https://github.com/Mancini-Developer80/Job-Tracker"
-              target="_blank"
-              class="btn btn-github btn--dark"
-              >Repository</a
-            >
-            <a
-              href="{% url 'pages:case-detail' slug='job-tracker' %}"
+              href="{% url 'pages:case-detail' slug=case_study.slug %}"
               class="btn btn--secondary"
               >Case Study</a
             >
           </div>
         </div>
       </div>
-      <div
-        class="project project-7 card card--project"
-        role="listitem"
-        data-tech="django python bootstrap"
-      >
-        <img
-          class="card__media"
-          src="{% static 'PortfolioHero.png' %}"
-          alt="Portfolio Website Screenshot"
-          loading="lazy"
-          decoding="async"
-          width="800"
-          height="220"
-        />
-        <div class="project-info card__body">
-          <h3 class="project-heading card__title">Portfolio Website</h3>
-          <p class="project-description card__text">
-            Modern portfolio built with Django, featuring dynamic content, blog
-            integration, and responsive design.
-          </p>
-          <div class="btn-group card__actions">
-            <a href="/" class="btn btn-project btn--primary">View Project</a>
-            <a
-              href="https://github.com/Mancini-Developer80/MainPortfolio"
-              target="_blank"
-              class="btn btn-github btn--dark"
-              >Repository</a
-            >
-            <a
-              href="{% url 'pages:case-detail' slug='promontolio-blog-cms' %}"
-              class="btn btn--secondary"
-              >Case Study</a
-            >
-          </div>
-        </div>
-      </div>
+      {% empty %}
+      <p style="text-align: center; padding: 2rem; grid-column: 1 / -1;">No featured projects yet. Mark projects as featured in the admin!</p>
+      {% endfor %}
     </div>
     <div class="cluster cluster--center" style="margin-top: 1rem">
       <a href="{% url 'pages:projects' %}" class="btn btn--primary"
@@ -436,9 +387,10 @@
       <form
         id="contact-form"
         class="contact-form-modern"
-        action="https://formspree.io/f/mgvwqkww"
         method="POST"
+        action="{% url 'pages:home' %}#contact"
       >
+        {% csrf_token %}
         <div class="form-group input-icon">
           <label for="subject">Subject</label>
           <div class="input-wrapper">
@@ -495,4 +447,21 @@
     </div>
   </section>
 </main>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+  // Auto-dismiss messages after 5 seconds
+  document.addEventListener('DOMContentLoaded', function() {
+    const alerts = document.querySelectorAll('.alert[data-auto-dismiss]');
+    alerts.forEach(function(alert) {
+      setTimeout(function() {
+        alert.style.animation = 'slideOutRight 0.4s ease-out';
+        setTimeout(function() {
+          alert.remove();
+        }, 400);
+      }, 5000);
+    });
+  });
+</script>
 {% endblock %}

@@ -121,46 +121,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // AJAX Formspree form submission with custom thank you message and auto-redirect
-  if (form) {
-    form.addEventListener("submit", async function (e) {
-      e.preventDefault();
-
-      const formData = new FormData(form);
-
-      try {
-        const response = await fetch(form.action, {
-          method: "POST",
-          body: formData,
-          headers: {
-            Accept: "application/json",
-          },
-        });
-
-        if (response.ok) {
-          form.style.display = "none";
-          messageDiv.style.display = "block";
-          messageDiv.innerHTML = `
-            <h3>Thank you!</h3>
-            <p>Your message has been sent. We will get back to you soon.</p>
-            <a href="index.html" class="btn" style="margin-top:1.5rem;display:inline-block;">Return to Home</a>
-          `;
-          // Automatically redirect to home after 4 seconds
-          setTimeout(function () {
-            window.location.href = "index.html";
-          }, 4000);
-        } else {
-          messageDiv.style.display = "block";
-          messageDiv.innerHTML =
-            "<p>There was an error sending your message. Please try again later.</p>";
-        }
-      } catch (error) {
-        messageDiv.style.display = "block";
-        messageDiv.innerHTML =
-          "<p>There was an error sending your message. Please try again later.</p>";
-      }
-    });
-  }
+  // Contact form is now handled by Django backend
+  // No JavaScript interception needed - form submits normally to server
 
   // IntersectionObserver for about-intro animation (bidirectional)
   const left = document.querySelector(".about-intro .left-content");

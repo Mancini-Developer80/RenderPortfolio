@@ -1,4 +1,117 @@
 /* Contact sections and form styles */
+
+/* Django Messages */
+.messages-container {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 9999;
+  max-width: 400px;
+  width: 100%;
+
+  .alert {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    animation: slideInRight 0.4s ease-out;
+    backdrop-filter: blur(10px);
+    position: relative;
+
+    i {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    span {
+      flex: 1;
+    }
+
+    .alert-close {
+      background: none;
+      border: none;
+      color: inherit;
+      cursor: pointer;
+      padding: 0;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: background-color 0.2s;
+      flex-shrink: 0;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+
+      i {
+        font-size: 0.9rem;
+      }
+    }
+
+    &.alert-success {
+      background: rgba(40, 167, 69, 0.95);
+      color: white;
+      border-left: 4px solid #1e7e34;
+    }
+
+    &.alert-error {
+      background: rgba(220, 53, 69, 0.95);
+      color: white;
+      border-left: 4px solid #bd2130;
+    }
+
+    &.alert-info {
+      background: rgba(23, 162, 184, 0.95);
+      color: white;
+      border-left: 4px solid #117a8b;
+    }
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .messages-container {
+    top: 60px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+
+    .alert {
+      font-size: 0.9rem;
+      padding: 14px 16px;
+    }
+  }
+}
+
 .contact-modern {
   background: linear-gradient(120deg, #f8fafc 60%, #eaf3fb 100%);
   padding: 0 0 3rem 0;
