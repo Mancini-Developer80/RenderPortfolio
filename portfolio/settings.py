@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 import os
 import dj_database_url
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -181,3 +184,14 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # Development 
 # Email addresses
 DEFAULT_FROM_EMAIL = 'noreply@giuseppemancini.com'  # Sender for auto-reply emails
 CONTACT_EMAIL = 'giuseppe@example.com'  # Admin email to receive contact form notifications
+
+
+
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
