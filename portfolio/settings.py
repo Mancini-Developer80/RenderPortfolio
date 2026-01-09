@@ -150,7 +150,29 @@ else:
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-# Cloudinary storage - django-cloudinary-storage automatically uses CLOUDINARY_URL env var
+# Cloudinary configuration
+# Parse CLOUDINARY_URL if available
+import cloudinary
+cloudinary_url = os.environ.get('CLOUDINARY_URL')
+if cloudinary_url:
+    # Parse the URL: cloudinary://api_key:api_secret@cloud_name
+    import re
+    match = re.match(r'cloudinary://(\d+):([^@]+)@(.+)', cloudinary_url)
+    if match:
+        api_key, api_secret, cloud_name = match.groups()
+        CLOUDINARY_STORAGE = {
+            'CLOUD_NAME': cloud_name,
+            'API_KEY': api_key,
+            'API_SECRET': api_secret,
+        }
+        # Also configure cloudinary library
+        cloudinary.config(
+            cloud_name=cloud_name,
+            api_key=api_key,
+            api_secret=api_secret,
+            secure=True
+        )
+
 # Set Cloudinary as default file storage for media files
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
