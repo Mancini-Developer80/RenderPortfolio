@@ -11,8 +11,6 @@ services:
       - key: SECRET_KEY
         sync: false
       - key: DATABASE_URL
-        fromDatabase:
-          name: Portfolio_PostgreSQL_Databse
-          property: connectionString
+        sync: false
       - key: CLOUDINARY_URL
         sync: false
