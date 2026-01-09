@@ -151,8 +151,6 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 # Cloudinary configuration
-# Parse CLOUDINARY_URL if available
-import cloudinary
 cloudinary_url = os.environ.get('CLOUDINARY_URL')
 if cloudinary_url:
     # Parse the URL: cloudinary://api_key:api_secret@cloud_name
@@ -172,9 +170,15 @@ if cloudinary_url:
             api_secret=api_secret,
             secure=True
         )
-
-# Set Cloudinary as default file storage for media files
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+        # Set Cloudinary as default storage
+        DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+        print(f"✓ Cloudinary configured: {cloud_name}")
+    else:
+        print("✗ Failed to parse CLOUDINARY_URL")
+        DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
+else:
+    print("✗ CLOUDINARY_URL not set")
+    DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
