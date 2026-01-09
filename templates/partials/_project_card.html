@@ -6,7 +6,7 @@
 >
   <img
     class="card__media"
-    src="{% static project.image %}"
+    src="{{ project.image.url }}"
     alt="{{ project.title }} Screenshot"
     loading="lazy"
     decoding="async"
