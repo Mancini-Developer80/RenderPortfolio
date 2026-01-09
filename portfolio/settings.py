@@ -19,6 +19,18 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Parse Cloudinary URL early
+import re
+cloudinary_url = os.environ.get('CLOUDINARY_URL', '')
+if cloudinary_url:
+    match = re.match(r'cloudinary://(\d+):([^@]+)@(.+)', cloudinary_url)
+    if match:
+        api_key, api_secret, cloud_name = match.groups()
+        CLOUDINARY_STORAGE = {
+            'CLOUD_NAME': cloud_name,
+            'API_KEY': api_key,
+            'API_SECRET': api_secret,
+        }
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -150,35 +162,8 @@ else:
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-# Cloudinary configuration
-cloudinary_url = os.environ.get('CLOUDINARY_URL')
-if cloudinary_url:
-    # Parse the URL: cloudinary://api_key:api_secret@cloud_name
-    import re
-    match = re.match(r'cloudinary://(\d+):([^@]+)@(.+)', cloudinary_url)
-    if match:
-        api_key, api_secret, cloud_name = match.groups()
-        CLOUDINARY_STORAGE = {
-            'CLOUD_NAME': cloud_name,
-            'API_KEY': api_key,
-            'API_SECRET': api_secret,
-        }
-        # Also configure cloudinary library
-        cloudinary.config(
-            cloud_name=cloud_name,
-            api_key=api_key,
-            api_secret=api_secret,
-            secure=True
-        )
-        # Set Cloudinary as default storage
-        DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-        print(f"✓ Cloudinary configured: {cloud_name}")
-    else:
-        print("✗ Failed to parse CLOUDINARY_URL")
-        DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
-else:
-    print("✗ CLOUDINARY_URL not set")
-    DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
+# Set Cloudinary as default storage (configured at top of file)
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
