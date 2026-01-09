@@ -44,3 +44,8 @@ Thumbs.db
 
 # IMPORTANT: Don't ignore compiled CSS - it's needed for deployment
 # css/style.css should be committed
+
+# Data export/import files
+casestudies_export.json
+exported_data.txt
+exported_data_complete.txt
