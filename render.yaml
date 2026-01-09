@@ -14,9 +14,5 @@ services:
         fromDatabase:
           name: Portfolio_PostgreSQL_Databse
           property: connectionString
-      - key: CLOUDINARY_CLOUD_NAME
-        sync: false
-      - key: CLOUDINARY_API_KEY
-        sync: false
-      - key: CLOUDINARY_API_SECRET
+      - key: CLOUDINARY_URL
         sync: false

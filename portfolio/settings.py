@@ -195,18 +195,13 @@ CONTACT_EMAIL = 'giuseppe@example.com'  # Admin email to receive contact form no
 
 
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
-    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
-    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
-}
+# Cloudinary configuration using CLOUDINARY_URL
+# Format: cloudinary://api_key:api_secret@cloud_name
+CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
 
-# Configure Cloudinary using the same credentials
-cloudinary.config(
-    cloud_name=os.environ.get('CLOUDINARY_CLOUD_NAME'),
-    api_key=os.environ.get('CLOUDINARY_API_KEY'),
-    api_secret=os.environ.get('CLOUDINARY_API_SECRET'),
-    secure=True
-)
-
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+if CLOUDINARY_URL:
+    # django-cloudinary-storage will automatically use CLOUDINARY_URL
+    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+else:
+    # Fallback to local storage for development
+    DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
