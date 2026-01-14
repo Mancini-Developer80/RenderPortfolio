@@ -7,7 +7,9 @@
 
 A production-ready, full-stack portfolio and Content Management System (CMS) built with **Django 5.x**. This platform features a dynamic blogging engine, an automated contact management system, and a modular SCSS architecture, all deployed on a custom domain via Render.
 
-<img width="1871" height="921" alt="PortfolioHome" src="https://github.com/user-attachments/assets/c69bd461-b6e0-415c-83ff-6a6b77ccf4ba" />
+<img width="1871" height="885" alt="PortfolioHome" src="https://github.com/user-attachments/assets/1fccf47e-2946-49ff-82c4-d89c5a165510" />
+
+---
 
 [**www.giuseppemancini.dev**](https://www.giuseppemancini.dev)
 
