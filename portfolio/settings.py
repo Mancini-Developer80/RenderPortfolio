@@ -207,21 +207,21 @@ CKEDITOR_UPLOAD_PATH = "uploads/"
 
 # Email Configuration
 # In development (DEBUG=True), emails are printed to console
-# In production (DEBUG=False), use SMTP with Zoho
+# In production (DEBUG=False), use SMTP with Zoho EU
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    EMAIL_HOST = 'smtp.zoho.com'
+    EMAIL_HOST = 'smtppro.zoho.eu'  # Zoho EU SMTP server
     EMAIL_PORT = 587
     EMAIL_USE_TLS = True
-    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'info@giuseppemancini.dev')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
     EMAIL_TIMEOUT = 30  # 30 seconds timeout
 
-# Email addresses
-DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER', 'info@giuseppemancini.dev')
-CONTACT_EMAIL = os.environ.get('EMAIL_HOST_USER', 'info@giuseppemancini.dev')
+# Email addresses - must match the authenticated email
+DEFAULT_FROM_EMAIL = 'info@giuseppemancini.dev'
+CONTACT_EMAIL = 'info@giuseppemancini.dev'
 
 
 
