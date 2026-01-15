@@ -212,12 +212,13 @@ if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    EMAIL_HOST = 'smtppro.zoho.eu'  # Zoho EU SMTP server
-    EMAIL_PORT = 587
-    EMAIL_USE_TLS = True
+    EMAIL_HOST = 'smtppro.zoho.eu'
+    EMAIL_PORT = 465  # Cambiato da 587 a 465
+    EMAIL_USE_SSL = True  # Usiamo SSL come da screenshot
+    EMAIL_USE_TLS = False # Disabilitiamo TLS perché usiamo SSL sulla 465
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'info@giuseppemancini.dev')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-    EMAIL_TIMEOUT = 30  # 30 seconds timeout
+    EMAIL_TIMEOUT = 30
 
 # Email addresses - must match the authenticated email
 DEFAULT_FROM_EMAIL = 'info@giuseppemancini.dev'
