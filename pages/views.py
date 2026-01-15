@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
-from django.core.mail import send_mail, EmailMultiAlternatives
+from django.core.mail import send_mail, EmailMessage
 from django.template.loader import render_to_string
 from django.conf import settings
 from .models import CaseStudy, ContactSubmission
@@ -54,14 +54,15 @@ Messaggio:
 ---
 Ricevuto il: {submission.submitted_at.strftime('%d/%m/%Y alle %H:%M:%S')}
 """
-						send_mail(
-							admin_subject,
-							admin_message,
-							settings.DEFAULT_FROM_EMAIL,  # Mittente: info@giuseppemancini.dev
-							[settings.CONTACT_EMAIL],  # Destinatario: info@giuseppemancini.dev
-							fail_silently=False,
+						# Use EmailMessage to support reply_to
+						email_obj = EmailMessage(
+							subject=admin_subject,
+							body=admin_message,
+							from_email=settings.DEFAULT_FROM_EMAIL,
+							to=[settings.CONTACT_EMAIL],
 							reply_to=[email],  # Reply-To: email dell'utente
 						)
+						email_obj.send(fail_silently=False)
 						
 						# Send auto-reply to submitter
 						reply_subject = f'Thank you for contacting me - {subject}'
